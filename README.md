@@ -1,37 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ModMetaData>
-  <name>Colony Leadership (Continued)</name>
-  <packageId>Mlie.ColonyLeadership</packageId>
-  <author>Nandonalt</author>
-  <url>https://github.com/emipa606/ColonyLeadership</url>
-  <supportedVersions>
-    <li>1.0</li>
-    <li>1.1</li>
-    <li>1.2</li>
-    <li>1.3</li>
-  </supportedVersions>
-  <modDependencies />
-  <loadAfter />
-  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+# ColonyLeadership
+
+![Image](https://i.imgur.com/buuPQel.png)
+
 Update of Nandonalts mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=848250236
 Based on the updated version by McKay
 https://steamcommunity.com/sharedfiles/filedetails/?id=1565942758
 
-[img]https://i.imgur.com/pufA0kM.png[/img]
+![Image](https://i.imgur.com/pufA0kM.png)
 
-[table]
-    [tr]
-        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
-        [td][url=https://github.com/emipa606/ColonyLeadership][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
-    [/tr]
-    [tr]
-        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
-        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
-    [/tr]
-[/table]
 	
-[img]https://i.imgur.com/Z4GOv8H.png[/img]
+![Image](https://i.imgur.com/Z4GOv8H.png)
+
 Colony Leadership Mod! Elect specialized leaders with increased stats and capacity to teach others.
 
 Doesn't require a new save game.
@@ -92,13 +72,15 @@ Want to support me and my mods? Check out https://www.patreon.com/nandonalt
 -----------------------
 ** If you want to cheat leaders in, enable dev mode and use the add leader button. However going past the limit is a choice of yours and the effects can be different.
 *** If you want to uninstall the mod, purge the leaders using dev mode and clicking the purge leaders button. This will remove traces of leadership on your colonists.
-[img]https://i.imgur.com/PwoNOj4.png[/img]
-[list]
-[*] See if the the error persists if you just have this mod and its requirements active.
-[*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
-[*] For best support, please use the Discord-channel for error-reporting.
-[*] Do not report errors by making a discussion-thread, I get no notification of that.
-[*] If you have the solution for a problem, please post it to the GitHub repository.
-[/list]</description>
-</ModMetaData>
+![Image](https://i.imgur.com/PwoNOj4.png)
+
+
+
+-  See if the the error persists if you just have this mod and its requirements active.
+-  If not, try adding your other mods until it happens again.
+-  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib and command Ctrl+F12
+-  For best support, please use the Discord-channel for error-reporting.
+-  Do not report errors by making a discussion-thread, I get no notification of that.
+-  If you have the solution for a problem, please post it to the GitHub repository.
+
+
