@@ -205,53 +205,51 @@ public class LeaderWindow : MainTabWindow
                 needNewLeaders = true;
             }
 
+            //if (flag == true && Find.VisibleMap != null)
+            //{
+            var button = new Rect(90f, 5f, 200f, 40f);
+            if (Widgets.ButtonText(button, "DEV: Reset Leadership Type", true, false))
             {
-                //if (flag == true && Find.VisibleMap != null)
-                //{
-                var button = new Rect(90f, 5f, 200f, 40f);
-                if (Widgets.ButtonText(button, "DEV: Reset Leadership Type", true, false))
+                Find.WindowStack.Add(new Dialog_ChooseRules());
+                /*
+                TooltipHandler.TipRegion(button, "Gather colonists to vote for their leaders. Will start a election on the visible map.");
+                if (Find.VisibleMap.lordManager.lords.Find(x => x.LordJob.GetType() == typeof(LordJob_Joinable_LeaderElection)) != null)
                 {
-                    Find.WindowStack.Add(new Dialog_ChooseRules());
-                    /*
-                    TooltipHandler.TipRegion(button, "Gather colonists to vote for their leaders. Will start a election on the visible map.");
-                    if (Find.VisibleMap.lordManager.lords.Find(x => x.LordJob.GetType() == typeof(LordJob_Joinable_LeaderElection)) != null)
+                    Messages.Message("The colony is already gathering for an election.", MessageSound.RejectInput);
+                }
+                else
+                {
+                    List<Pawn> canBeVoted = new List<Pawn>();
+                    canBeVoted.AddRange(getAllColonists());
+                    List<Pawn> tpawns2 = new List<Pawn>();
+                    foreach (Pawn current in canBeVoted)
                     {
-                        Messages.Message("The colony is already gathering for an election.", MessageSound.RejectInput);
+                        Hediff h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
+                        Hediff h2 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader2"));
+                        Hediff h3 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));
+                        Hediff h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
+                        Hediff h5 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leaderExpired"));
+                        if (h1 != null || h2 != null || h3 != null || h4 != null || h5 != null) { tpawns2.Add(current); }
+                        if (current.story.WorkTagIsDisabled(WorkTags.Social)) { tpawns2.Add(current); }
+                    }
+                    foreach (Pawn current in tpawns2)
+                    {
+                        canBeVoted.Remove(current);
+                    }
+                    if (canBeVoted.NullOrEmpty())
+                    {
+                        Messages.Message("No colonist is able to be a leader.", MessageSound.Negative);
                     }
                     else
                     {
-                        List<Pawn> canBeVoted = new List<Pawn>();
-                        canBeVoted.AddRange(getAllColonists());
-                        List<Pawn> tpawns2 = new List<Pawn>();
-                        foreach (Pawn current in canBeVoted)
-                        {
-                            Hediff h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
-                            Hediff h2 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader2"));
-                            Hediff h3 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));
-                            Hediff h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
-                            Hediff h5 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leaderExpired"));
-                            if (h1 != null || h2 != null || h3 != null || h4 != null || h5 != null) { tpawns2.Add(current); }
-                            if (current.story.WorkTagIsDisabled(WorkTags.Social)) { tpawns2.Add(current); }
-                        }
-                        foreach (Pawn current in tpawns2)
-                        {
-                            canBeVoted.Remove(current);
-                        }
-                        if (canBeVoted.NullOrEmpty())
-                        {
-                            Messages.Message("No colonist is able to be a leader.", MessageSound.Negative);
-                        }
-                        else
-                        {
 
-                            //IncidentDef.Named("LeaderElection").Worker.TryExecute(parms);
-                            IncidentWorker_LeaderElection.TryStartGathering(Find.VisibleMap);
-                        }
-
+                        //IncidentDef.Named("LeaderElection").Worker.TryExecute(parms);
+                        IncidentWorker_LeaderElection.TryStartGathering(Find.VisibleMap);
                     }
-                    */
-                    //  }
+
                 }
+                */
+                //  }
             }
         }
 
@@ -427,13 +425,14 @@ public class LeaderWindow : MainTabWindow
             stringBuilder2.AppendLine("AverageOpinionAbout".Translate() + need.opinion);
 
 
-            if (need.opinion < -60 && !Utility.isDictatorship)
+            switch (need.opinion)
             {
-                stringBuilder2.AppendLine("UnpopularLeader".Translate());
-            }
-            else if (need.opinion < -20)
-            {
-                stringBuilder2.AppendLine("UnlikedLeader".Translate());
+                case < -60 when !Utility.isDictatorship:
+                    stringBuilder2.AppendLine("UnpopularLeader".Translate());
+                    break;
+                case < -20:
+                    stringBuilder2.AppendLine("UnlikedLeader".Translate());
+                    break;
             }
 
             TooltipHandler.TipRegion(rect2, stringBuilder2.ToString());
@@ -453,7 +452,7 @@ public class LeaderWindow : MainTabWindow
         Widgets.ThingIcon(position, leader);
 
         //Widgets.DrawRectFast(position, Color.white, null);
-        var label = string.Concat(leader.Name.ToStringFull, "\n", "   ", leaderLabel(leader), "\n");
+        var label = $"{leader.Name.ToStringFull}\n   {leaderLabel(leader)}\n";
         if (need.opinion < -20)
         {
             GUI.color = Color.yellow;

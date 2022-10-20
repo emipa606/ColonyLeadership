@@ -14,27 +14,25 @@ public static class Detours
 
     public static unsafe bool TryDetourFromTo(MethodInfo source, MethodInfo destination)
     {
-        var flag = source == null;
         bool result;
-        if (flag)
+        if (source == null)
         {
             Log.Error("Source MethodInfo is null: Detours");
             result = false;
         }
         else
         {
-            var flag2 = destination == null;
-            if (flag2)
+            if (destination == null)
             {
                 Log.Error("Destination MethodInfo is null: Detours");
                 result = false;
             }
             else
             {
-                var item = string.Concat(source.DeclaringType?.FullName, ".", source.Name, " @ 0x",
-                    source.MethodHandle.GetFunctionPointer().ToString("X" + (IntPtr.Size * 2)));
-                var item2 = string.Concat(destination.DeclaringType?.FullName, ".", destination.Name, " @ 0x",
-                    destination.MethodHandle.GetFunctionPointer().ToString("X" + (IntPtr.Size * 2)));
+                var item =
+                    $"{source.DeclaringType?.FullName}.{source.Name} @ 0x{source.MethodHandle.GetFunctionPointer().ToString($"X{IntPtr.Size * 2}")}";
+                var item2 =
+                    $"{destination.DeclaringType?.FullName}.{destination.Name} @ 0x{destination.MethodHandle.GetFunctionPointer().ToString($"X{IntPtr.Size * 2}")}";
                 detoured.Add(item);
                 destinations.Add(item2);
                 if (IntPtr.Size == 8)

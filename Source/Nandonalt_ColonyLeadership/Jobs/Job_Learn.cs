@@ -57,62 +57,76 @@ internal class Job_Learn : JobDriver
     {
         var leaderType = TeachingUtility.getLeaderType(teacher);
         var sciLeaderDeffName = ConfigManager.getScientistLeaderDeffName();
-        if (leaderType == "leader1")
+        switch (leaderType)
         {
-            if (teacher.skills.GetSkill(SkillDefOf.Plants).Level >= TeachingUtility.minSkill)
+            case "leader1":
             {
-                skillPool.Add(SkillDefOf.Plants);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Plants).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Plants);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Medicine).Level >= TeachingUtility.minSkill)
-            {
-                skillPool.Add(SkillDefOf.Medicine);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Medicine).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Medicine);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Animals).Level >= TeachingUtility.minSkill)
-            {
-                skillPool.Add(SkillDefOf.Animals);
-            }
-        }
-        else if (leaderType == "leader2")
-        {
-            if (teacher.skills.GetSkill(SkillDefOf.Shooting).Level >= TeachingUtility.minSkill)
-            {
-                skillPool.Add(SkillDefOf.Shooting);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Animals).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Animals);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Melee).Level >= TeachingUtility.minSkill)
-            {
-                skillPool.Add(SkillDefOf.Melee);
+                break;
             }
-        }
-        else if (leaderType == "leader3")
-        {
-            if (teacher.skills.GetSkill(SkillDefOf.Construction).Level >= TeachingUtility.minSkill)
+            case "leader2":
             {
-                skillPool.Add(SkillDefOf.Construction);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Shooting).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Shooting);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Crafting).Level >= TeachingUtility.minSkill)
-            {
-                skillPool.Add(SkillDefOf.Crafting);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Melee).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Melee);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Artistic).Level >= TeachingUtility.minSkill)
-            {
-                skillPool.Add(SkillDefOf.Artistic);
+                break;
             }
-        }
-        else if (leaderType == sciLeaderDeffName)
-        {
-            if (teacher.skills.GetSkill(SkillDefOf.Intellectual).Level >= TeachingUtility.minSkill)
+            case "leader3":
             {
-                skillPool.Add(SkillDefOf.Intellectual);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Construction).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Construction);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Medicine).Level >= TeachingUtility.minSkill)
+                if (teacher.skills.GetSkill(SkillDefOf.Crafting).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Crafting);
+                }
+
+                if (teacher.skills.GetSkill(SkillDefOf.Artistic).Level >= TeachingUtility.minSkill)
+                {
+                    skillPool.Add(SkillDefOf.Artistic);
+                }
+
+                break;
+            }
+            default:
             {
-                skillPool.Add(SkillDefOf.Medicine);
+                if (leaderType == sciLeaderDeffName)
+                {
+                    if (teacher.skills.GetSkill(SkillDefOf.Intellectual).Level >= TeachingUtility.minSkill)
+                    {
+                        skillPool.Add(SkillDefOf.Intellectual);
+                    }
+
+                    if (teacher.skills.GetSkill(SkillDefOf.Medicine).Level >= TeachingUtility.minSkill)
+                    {
+                        skillPool.Add(SkillDefOf.Medicine);
+                    }
+                }
+
+                break;
             }
         }
 
@@ -173,8 +187,8 @@ internal class Job_Learn : JobDriver
 
         AddFinishAction(() =>
         {
-            if (Spott.currentLessonState == Building_TeachingSpot.LessonState.finishing ||
-                Spott.currentLessonState == Building_TeachingSpot.LessonState.finished)
+            if (Spott.currentLessonState is Building_TeachingSpot.LessonState.finishing
+                or Building_TeachingSpot.LessonState.finished)
             {
                 pawn.needs.mood.thoughts.memories.TryGainMemory(
                     Rand.Range(0f, 1f) < 0.8f ? ThoughtDef.Named("LessonPositive") : ThoughtDef.Named("LessonNegative"),

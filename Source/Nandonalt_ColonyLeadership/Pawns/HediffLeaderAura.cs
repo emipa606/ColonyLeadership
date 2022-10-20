@@ -42,21 +42,20 @@ public class HediffLeaderAura : HediffWithComps
         {
             string label;
             var sciLeaderDeffName = ConfigManager.getScientistLeaderDeffName();
-            if (def.defName == "leaderAura1")
+            switch (def.defName)
             {
-                label = "leader1";
-            }
-            else if (def.defName == "leaderAura2")
-            {
-                label = "leader2";
-            }
-            else if (def.defName == "leaderAura3")
-            {
-                label = "leader3";
-            }
-            else
-            {
-                label = sciLeaderDeffName;
+                case "leaderAura1":
+                    label = "leader1";
+                    break;
+                case "leaderAura2":
+                    label = "leader2";
+                    break;
+                case "leaderAura3":
+                    label = "leader3";
+                    break;
+                default:
+                    label = sciLeaderDeffName;
+                    break;
             }
 
             /*

@@ -140,21 +140,26 @@ internal class Job_Teach : JobDriver
                         continue;
                     }
 
-                    if (s == "leader1")
+                    switch (s)
                     {
-                        chalk.state = 1;
-                    }
-                    else if (s == "leader2")
-                    {
-                        chalk.state = 2;
-                    }
-                    else if (s == "leader3")
-                    {
-                        chalk.state = 3;
-                    }
-                    else if (s == sciLeaderDeffName)
-                    {
-                        chalk.state = 4;
+                        case "leader1":
+                            chalk.state = 1;
+                            break;
+                        case "leader2":
+                            chalk.state = 2;
+                            break;
+                        case "leader3":
+                            chalk.state = 3;
+                            break;
+                        default:
+                        {
+                            if (s == sciLeaderDeffName)
+                            {
+                                chalk.state = 4;
+                            }
+
+                            break;
+                        }
                     }
 
                     chalk.frame++;
@@ -192,7 +197,7 @@ internal class Job_Teach : JobDriver
 
         finishingTime.tickAction = delegate
         {
-            if (tickC == 120 || tickC == 240 || tickC == 360)
+            if (tickC is 120 or 240 or 360)
             {
                 foreach (var chalk in chalkboards)
                 {
@@ -262,8 +267,8 @@ internal class Job_Teach : JobDriver
                 Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlag.Things, true, false);
             }
 
-            if (Spot.currentLessonState == Building_TeachingSpot.LessonState.finishing ||
-                Spot.currentLessonState == Building_TeachingSpot.LessonState.finished)
+            if (Spot.currentLessonState is Building_TeachingSpot.LessonState.finishing
+                or Building_TeachingSpot.LessonState.finished)
             {
                 pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("TaughtCL"));
             }

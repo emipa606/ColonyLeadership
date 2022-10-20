@@ -153,7 +153,7 @@ public class Building_BallotBox : Building
 
         if (lastElectionTick > 0)
         {
-            str = (Find.TickManager.TicksGame - lastElectionTick).ToStringTicksToPeriodVague() + " ago.";
+            str = $"{(Find.TickManager.TicksGame - lastElectionTick).ToStringTicksToPeriodVague()} ago.";
         }
 
         if (!Utility.isDemocracy)
@@ -207,8 +207,8 @@ public class Building_BallotBox : Building
         var lords = map.lordManager.lords;
         foreach (var lord in lords)
         {
-            if (lord.LordJob is LordJob_Joinable_Party || lord.LordJob is LordJob_Joinable_MarriageCeremony ||
-                lord.LordJob is LordJob_Joinable_SetLeadership)
+            if (lord.LordJob is LordJob_Joinable_Party or LordJob_Joinable_MarriageCeremony
+                or LordJob_Joinable_SetLeadership)
             {
                 return false;
             }

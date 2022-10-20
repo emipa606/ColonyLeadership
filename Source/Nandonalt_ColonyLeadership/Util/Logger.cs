@@ -12,22 +12,20 @@ internal static class Logger
             return;
         }
 
-        if (logType == Log.INFO)
+        switch (logType)
         {
-            File.WriteAllText("C:/Logs/infoLog.txt", str + Environment.NewLine);
-        }
-
-        else if (logType == Log.DEBUG)
-        {
-            File.WriteAllText("C:/Logs/debugLog.txt", str + Environment.NewLine);
-        }
-        else if (logType == Log.NONFATAL)
-        {
-            File.WriteAllText("C:/Logs/nonFatalLog.txt", str + Environment.NewLine);
-        }
-        else if (logType == Log.FATAL)
-        {
-            File.WriteAllText("C:/Logs/fatalLog.txt", str + Environment.NewLine);
+            case Log.INFO:
+                File.WriteAllText("C:/Logs/infoLog.txt", str + Environment.NewLine);
+                break;
+            case Log.DEBUG:
+                File.WriteAllText("C:/Logs/debugLog.txt", str + Environment.NewLine);
+                break;
+            case Log.NONFATAL:
+                File.WriteAllText("C:/Logs/nonFatalLog.txt", str + Environment.NewLine);
+                break;
+            case Log.FATAL:
+                File.WriteAllText("C:/Logs/fatalLog.txt", str + Environment.NewLine);
+                break;
         }
     }
 }

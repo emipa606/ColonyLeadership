@@ -15,7 +15,7 @@ public class PlaceWorker_TeachingSpot : PlaceWorker
 
         foreach (var t in allBuildingsColonist)
         {
-            if (t.def.defName == "TeachingSpot" || t.def.defName == "TeachingSpot_Blueprint")
+            if (t.def.defName is "TeachingSpot" or "TeachingSpot_Blueprint")
             {
                 return new AcceptanceReport("OnlyOnePerColony");
             }

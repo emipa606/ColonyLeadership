@@ -16,22 +16,22 @@ public class ModTextures
 
         for (var i = 1; i <= botanistTextures; i++)
         {
-            icons_leader1.Add(ContentFinder<Texture2D>.Get("ColonyLeadership/TeachingBubbles/botanist" + i));
+            icons_leader1.Add(ContentFinder<Texture2D>.Get($"ColonyLeadership/TeachingBubbles/botanist{i}"));
         }
 
         for (var i = 1; i <= warriorTextures; i++)
         {
-            icons_leader2.Add(ContentFinder<Texture2D>.Get("ColonyLeadership/TeachingBubbles/warrior" + i));
+            icons_leader2.Add(ContentFinder<Texture2D>.Get($"ColonyLeadership/TeachingBubbles/warrior{i}"));
         }
 
         for (var i = 1; i <= carpenterTextures; i++)
         {
-            icons_leader3.Add(ContentFinder<Texture2D>.Get("ColonyLeadership/TeachingBubbles/carpenter" + i));
+            icons_leader3.Add(ContentFinder<Texture2D>.Get($"ColonyLeadership/TeachingBubbles/carpenter{i}"));
         }
 
         for (var i = 1; i <= scientistTextures; i++)
         {
-            icons_leader4.Add(ContentFinder<Texture2D>.Get("ColonyLeadership/TeachingBubbles/scientist" + i));
+            icons_leader4.Add(ContentFinder<Texture2D>.Get($"ColonyLeadership/TeachingBubbles/scientist{i}"));
         }
     }
 

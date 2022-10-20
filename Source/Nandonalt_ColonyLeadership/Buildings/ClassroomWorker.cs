@@ -10,14 +10,14 @@ public class ClassroomWorker : RoomRoleWorker
         var allContainedThings = room.ContainedAndAdjacentThings;
         foreach (var thing in allContainedThings)
         {
-            if (thing is Building_TeachingSpot)
+            switch (thing)
             {
-                num += 2;
-            }
-
-            if (thing is Building_Chalkboard)
-            {
-                num++;
+                case Building_TeachingSpot:
+                    num += 2;
+                    break;
+                case Building_Chalkboard:
+                    num++;
+                    break;
             }
 
             if (thing.def.defName == "GlobeCL")

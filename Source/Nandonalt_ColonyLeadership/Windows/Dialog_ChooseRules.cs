@@ -163,14 +163,15 @@ public class Dialog_ChooseRules : Window
     {
         var allowedDays = new List<int> { 0 };
 
-        if (freq == 2)
+        switch (freq)
         {
-            allowedDays.Add(10);
-        }
-        else if (freq == 3)
-        {
-            allowedDays.Add(6);
-            allowedDays.Add(14);
+            case 2:
+                allowedDays.Add(10);
+                break;
+            case 3:
+                allowedDays.Add(6);
+                allowedDays.Add(14);
+                break;
         }
 
         return allowedDays;

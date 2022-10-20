@@ -251,12 +251,12 @@ public class Need_LeaderLevel : Need
 
     public override string GetTipString()
     {
-        return base.GetTipString() + "\n" + "LeaderLevel".Translate() + getLeaderLevel().ToString() + "\n" +
+        return $"{base.GetTipString()}\n" + "LeaderLevel".Translate() + getLeaderLevel().ToString() + "\n" +
                "AverageOpinion".Translate() + opinion.ToString();
     }
 
     public override void DrawOnGUI(Rect rect, int maxThresholdMarkers = 2147483647, float customMargin = -1f,
-        bool drawArrows = true, bool doTooltip = true, Rect? rectForTooltip = null)
+        bool drawArrows = true, bool doTooltip = true, Rect? rectForTooltip = null, bool drawLabel = true)
     {
         if (rect.height > 70f)
         {

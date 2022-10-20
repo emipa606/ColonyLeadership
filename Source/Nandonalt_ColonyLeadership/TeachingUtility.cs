@@ -108,7 +108,7 @@ internal class TeachingUtility
     {
         spot?.ChangeState(Building_TeachingSpot.State.notinuse);
 
-        Messages.Message(reason + " Aborting lesson.", MessageTypeDefOf.NegativeEvent);
+        Messages.Message($"{reason} Aborting lesson.", MessageTypeDefOf.NegativeEvent);
     }
 
     public static bool IsActorAvailable(Pawn actor, bool downedAllowed = false)
@@ -144,7 +144,7 @@ internal class TeachingUtility
             return false;
         }
 
-        s.AppendLine("ActorAvailable: Passed downed check & downedAllowed = " + downedAllowed);
+        s.AppendLine($"ActorAvailable: Passed downed check & downedAllowed = {downedAllowed}");
         if (actor.Drafted)
         {
             return false;
@@ -332,97 +332,108 @@ internal class TeachingUtility
         skills = "";
         var reachedLimit = false;
         var sciLeaderDeffName = ConfigManager.getScientistLeaderDeffName();
-        if (leaderType == "leader1")
+        switch (leaderType)
         {
-            if (teacher.skills.GetSkill(SkillDefOf.Plants).Level >= minSkill)
+            case "leader1":
             {
-                teachable.Add(SkillDefOf.Plants);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Plants).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Plants);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Medicine).Level >= minSkill)
+                if (teacher.skills.GetSkill(SkillDefOf.Medicine).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Medicine);
+                }
+
+                if (teacher.skills.GetSkill(SkillDefOf.Animals).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Animals);
+                }
+
+                if (teachable.Count < 3)
+                {
+                    reachedLimit = true;
+                }
+
+                missing = "SkillSet1";
+                break;
+            }
+            case "leader2":
             {
-                teachable.Add(SkillDefOf.Medicine);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Shooting).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Shooting);
+                }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Animals).Level >= minSkill)
+                if (teacher.skills.GetSkill(SkillDefOf.Melee).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Melee);
+                }
+
+                if (teachable.Count < 2)
+                {
+                    reachedLimit = true;
+                }
+
+                missing = "SkillSet2";
+                break;
+            }
+            case "leader3":
             {
-                teachable.Add(SkillDefOf.Animals);
-            }
+                if (teacher.skills.GetSkill(SkillDefOf.Construction).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Construction);
+                }
 
-            if (teachable.Count < 3)
+                if (teacher.skills.GetSkill(SkillDefOf.Crafting).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Crafting);
+                }
+
+                if (teacher.skills.GetSkill(SkillDefOf.Artistic).Level >= minSkill)
+                {
+                    teachable.Add(SkillDefOf.Artistic);
+                }
+
+                if (teachable.Count < 3)
+                {
+                    reachedLimit = true;
+                }
+
+                missing = "SkillSet3";
+                break;
+            }
+            default:
             {
-                reachedLimit = true;
-            }
+                if (leaderType == sciLeaderDeffName)
+                {
+                    if (teacher.skills.GetSkill(SkillDefOf.Intellectual).Level >= minSkill)
+                    {
+                        teachable.Add(SkillDefOf.Intellectual);
+                    }
 
-            missing = "SkillSet1";
-        }
-        else if (leaderType == "leader2")
-        {
-            if (teacher.skills.GetSkill(SkillDefOf.Shooting).Level >= minSkill)
-            {
-                teachable.Add(SkillDefOf.Shooting);
-            }
+                    if (teachable.Count < 1)
+                    {
+                        reachedLimit = true;
+                    }
 
-            if (teacher.skills.GetSkill(SkillDefOf.Melee).Level >= minSkill)
-            {
-                teachable.Add(SkillDefOf.Melee);
-            }
+                    missing = "SkillSet4";
+                }
 
-            if (teachable.Count < 2)
-            {
-                reachedLimit = true;
+                break;
             }
-
-            missing = "SkillSet2";
-        }
-        else if (leaderType == "leader3")
-        {
-            if (teacher.skills.GetSkill(SkillDefOf.Construction).Level >= minSkill)
-            {
-                teachable.Add(SkillDefOf.Construction);
-            }
-
-            if (teacher.skills.GetSkill(SkillDefOf.Crafting).Level >= minSkill)
-            {
-                teachable.Add(SkillDefOf.Crafting);
-            }
-
-            if (teacher.skills.GetSkill(SkillDefOf.Artistic).Level >= minSkill)
-            {
-                teachable.Add(SkillDefOf.Artistic);
-            }
-
-            if (teachable.Count < 3)
-            {
-                reachedLimit = true;
-            }
-
-            missing = "SkillSet3";
-        }
-        else if (leaderType == sciLeaderDeffName)
-        {
-            if (teacher.skills.GetSkill(SkillDefOf.Intellectual).Level >= minSkill)
-            {
-                teachable.Add(SkillDefOf.Intellectual);
-            }
-
-            if (teachable.Count < 1)
-            {
-                reachedLimit = true;
-            }
-
-            missing = "SkillSet4";
         }
 
         if (teachable.NullOrEmpty())
         {
-            report = "MustHaveSkill" + minSkill + " " + missing;
+            report = $"MustHaveSkill{minSkill} {missing}";
             return false;
         }
 
         if (reachedLimit)
         {
-            report = "OnlyTeachIfSkill" + minSkill + " " + missing;
+            report = $"OnlyTeachIfSkill{minSkill} {missing}";
             return true;
         }
 

@@ -82,7 +82,7 @@ public class ITab_LessonSchedule : ITab
         }
 
         var button3 = new Rect(rect.x + dist, rect.y + 135f, 140f, 30f);
-        var hour = spot.lessonHour + ":00h";
+        var hour = $"{spot.lessonHour}:00h";
         if (Widgets.ButtonText(button3, "LessonStart".Translate() + hour, true, false))
         {
             listHours(spot);
@@ -103,17 +103,17 @@ public class ITab_LessonSchedule : ITab
     {
         rect = rect.ContractedBy(1f);
         var texture = TimeAssignmentDefOf.Anything.ColorTexture;
-        if (spot.seasonSchedule[day] == 1)
+        switch (spot.seasonSchedule[day])
         {
-            texture = ModTextures.RedColor;
-        }
-        else if (spot.seasonSchedule[day] == 2)
-        {
-            texture = ModTextures.BlueColor;
-        }
-        else if (spot.seasonSchedule[day] == 3)
-        {
-            texture = ModTextures.YellowColor;
+            case 1:
+                texture = ModTextures.RedColor;
+                break;
+            case 2:
+                texture = ModTextures.BlueColor;
+                break;
+            case 3:
+                texture = ModTextures.YellowColor;
+                break;
         }
 
         GUI.DrawTexture(rect, texture);
@@ -146,7 +146,7 @@ public class ITab_LessonSchedule : ITab
 
         foreach (var i in availableHours)
         {
-            list.Add(new FloatMenuOption(i + ":00h", delegate { spot.lessonHour = i; }));
+            list.Add(new FloatMenuOption($"{i}:00h", delegate { spot.lessonHour = i; }));
         }
 
 

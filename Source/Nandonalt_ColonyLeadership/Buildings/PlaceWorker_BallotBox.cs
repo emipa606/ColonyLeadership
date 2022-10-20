@@ -13,7 +13,7 @@ public class PlaceWorker_BallotBox : PlaceWorker
         var allBuildingsColonist = map.listerThings.AllThings;
         foreach (var building in allBuildingsColonist)
         {
-            if (building.def.defName == "BallotBox" || building.def.defName == "BallotBox_Blueprint")
+            if (building.def.defName is "BallotBox" or "BallotBox_Blueprint")
             {
                 return new AcceptanceReport("OnlyOnePerColony".Translate(building.def.LabelCap));
             }

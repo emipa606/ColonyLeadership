@@ -23,14 +23,15 @@ public class IncidentWorker_SetLeadership : IncidentWorker
 
         if (pawns.Count >= 5)
         {
-            if (count < 1)
+            switch (count)
             {
-                ElectLeader(new List<Pawn>());
-                ElectLeader(new List<Pawn>());
-            }
-            else if (count == 1)
-            {
-                ElectLeader(new List<Pawn>());
+                case < 1:
+                    ElectLeader(new List<Pawn>());
+                    ElectLeader(new List<Pawn>());
+                    break;
+                case 1:
+                    ElectLeader(new List<Pawn>());
+                    break;
             }
         }
         else
@@ -318,10 +319,10 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         {
             stringBuilder.AppendLine("");
             stringBuilder.AppendLine("--DEBUG-DEV---");
-            stringBuilder.AppendLine("Botanist Score: " + getBotanistScore(pawn));
-            stringBuilder.AppendLine("Warrior Score: " + getWarriorScore(pawn));
-            stringBuilder.AppendLine("Carpenter Score: " + getCarpenterScore(pawn));
-            stringBuilder.AppendLine("Scientist Score: " + getScientistScore(pawn));
+            stringBuilder.AppendLine($"Botanist Score: {getBotanistScore(pawn)}");
+            stringBuilder.AppendLine($"Warrior Score: {getWarriorScore(pawn)}");
+            stringBuilder.AppendLine($"Carpenter Score: {getCarpenterScore(pawn)}");
+            stringBuilder.AppendLine($"Scientist Score: {getScientistScore(pawn)}");
         }
 
         if (Utility.getGov() != null)

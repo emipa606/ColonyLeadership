@@ -66,9 +66,6 @@ TEACHING AND LESSONS
 THANKS TO: The RimWorld mod community for being cool, FlatIcon for some textures I used and Jecrell who helped me getting lessons to work by allowing me to use his code as a reference.
 Mods featured on screenshots: FashionRIMSta, Vegetable Garden, Facial Stuff.
 
-For older versions: https://ludeon.com/forums/index.php?topic=29847.0
-Want to support me and my mods? Check out https://www.patreon.com/nandonalt 
-
 -----------------------
 ** If you want to cheat leaders in, enable dev mode and use the add leader button. However going past the limit is a choice of yours and the effects can be different.
 *** If you want to uninstall the mod, purge the leaders using dev mode and clicking the purge leaders button. This will remove traces of leadership on your colonists.

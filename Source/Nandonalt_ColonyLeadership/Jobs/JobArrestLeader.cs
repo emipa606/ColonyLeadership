@@ -55,7 +55,6 @@ public class JobArrestLeader : JobDriver
         }); //Pretty sure I just changed this code to say "If(!CanBeArrestedByMyself){... See !this.Takee.CanBeArrestedBy((Pawn)base.pawn)). Previously used to be !this.CanBeArrested() but this method no longer exists. 
         yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch)
             .FailOnDespawnedNullOrForbidden(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.B)
-            .FailOnNonMedicalBedNotOwned(TargetIndex.B, TargetIndex.A)
             .FailOn(() => job.def == JobDefOf.Arrest && !Takee.CanBeArrestedBy(pawn))
             .FailOn(() => !pawn.CanReach(DropBed, PathEndMode.OnCell, Danger.Deadly))
             .FailOnSomeonePhysicallyInteracting(TargetIndex.A);

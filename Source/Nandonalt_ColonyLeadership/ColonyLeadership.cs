@@ -16,6 +16,14 @@ public class ColonyLeadership
     public static string helpNotes = "";
 
 
+    public static string lastReadVersion = "none";
+    public static string newVersion = "v1.5";
+    public static List<GovType> govtypes = new List<GovType>();
+    public static GovType tempGov = null;
+    public static GameInfo gameInfoTemp = null;
+    public static bool useLogging = false;
+
+
     static ColonyLeadership()
     {
         try
@@ -46,7 +54,7 @@ public class ColonyLeadership
             catch (Exception ex)
             {
                 //File.WriteAllText("logt.txt", ex.Message.ToString());
-                Log.Error("Exception loading colony leadership userdata: " + ex);
+                Log.Error($"Exception loading colony leadership userdata: {ex}");
                 Scribe.ForceStop();
             }
         }
@@ -132,19 +140,7 @@ public class ColonyLeadership
         }
         catch (Exception ex)
         {
-            Log.Error("Exception while saving colony leadership userdata: " + ex);
+            Log.Error($"Exception while saving colony leadership userdata: {ex}");
         }
     }
-
-
-    #region Variables
-
-    public static string lastReadVersion = "none";
-    public static string newVersion = "v1.5";
-    public static List<GovType> govtypes = new List<GovType>();
-    public static GovType tempGov = null;
-    public static GameInfo gameInfoTemp = null;
-    public static bool useLogging = false;
-
-    #endregion
 }

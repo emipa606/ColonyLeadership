@@ -115,7 +115,7 @@ public class Dialog_ChooseIgnored : Window
                     continue;
                 }
 
-                Logger.log("Removing Pawn from Ignore list: " + p.Name);
+                Logger.log($"Removing Pawn from Ignore list: {p.Name}");
                 spot.ignored.Remove(p);
             }
             else
@@ -125,7 +125,7 @@ public class Dialog_ChooseIgnored : Window
                     continue;
                 }
 
-                Logger.log("Adding Pawn from Ignore list: " + p.Name);
+                Logger.log($"Adding Pawn from Ignore list: {p.Name}");
                 spot.ignored.Add(p);
             }
         }
@@ -146,7 +146,7 @@ public class Dialog_ChooseIgnored : Window
         var isMouseOver = false;
         if (Widgets.CheckboxLabeledSelectable(rect2, ignorePawn.Name.ToString(), ref isMouseOver, ref toIgnore))
         {
-            Logger.log("Pawn Name: " + ignorePawn.Name + ", VAL = " + toIgnore);
+            Logger.log($"Pawn Name: {ignorePawn.Name}, VAL = {toIgnore}");
 
             toIgnore = !toIgnore;
         }

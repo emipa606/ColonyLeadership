@@ -316,19 +316,21 @@ public class Building_TeachingSpot : Building
         }
 
         var hasSkill = TeachingUtility.leaderHasAnySkill(tempTeacher, out var report, out skills);
-        if (hasSkill && report != "")
+        switch (hasSkill)
         {
-//                Messages.Message(report, TargetInfo.Invalid, nullSound);
-
-            if (Prefs.DevMode)
+            case true when report != "":
             {
-                Messages.Message(report, TargetInfo.Invalid, MessageTypeDefOf.NeutralEvent);
-            }
-        }
+                //                Messages.Message(report, TargetInfo.Invalid, nullSound);
 
-        if (!hasSkill)
-        {
-            return RejectMessage(report);
+                if (Prefs.DevMode)
+                {
+                    Messages.Message(report, TargetInfo.Invalid, MessageTypeDefOf.NeutralEvent);
+                }
+
+                break;
+            }
+            case false:
+                return RejectMessage(report);
         }
 
         if (tempTeacher.Drafted)

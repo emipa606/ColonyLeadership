@@ -111,7 +111,7 @@ public class HediffLeader : HediffWithComps
         {
             pawn.health.RemoveHediff(this);
             //This used to be: LetterDefOf.BadNonUrgent (or something like that, no longer exists as a def in rimworld). changed to NeutralEvent until we know what it does. 
-            Find.LetterStack.ReceiveLetter("LeaderEndLetter", "LeaderEndLetterDesc" + pawn.Name.ToStringFull,
+            Find.LetterStack.ReceiveLetter("LeaderEndLetter", $"LeaderEndLetterDesc{pawn.Name.ToStringFull}",
                 LetterDefOf.NeutralEvent, pawn);
         }
 
