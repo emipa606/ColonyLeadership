@@ -5,7 +5,7 @@ namespace Nandonalt_ColonyLeadership.Config;
 
 public sealed class ConfigManager
 {
-    private static List<int> electionDays = new List<int>(new[] { 0, 6, 14 }); //Means day 1, 7 and 15 on a seasonc;
+    private static List<int> electionDays = [..new[] { 0, 6, 14 }]; //Means day 1, 7 and 15 on a seasonc;
     private static bool psychicSensitivityForScientist = true;
     private static string scientistLeaderDeffName = "leader4";
 

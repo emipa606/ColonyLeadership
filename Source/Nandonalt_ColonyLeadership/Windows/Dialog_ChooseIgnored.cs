@@ -8,9 +8,10 @@ namespace Nandonalt_ColonyLeadership;
 
 public class Dialog_ChooseIgnored : Window
 {
+    public readonly List<Pawn> ignoreTemp;
     private readonly Building_TeachingSpot spot;
+    public readonly List<PawnIgnoreData> tempPawnList = [];
     protected string curName;
-    public List<Pawn> ignoreTemp;
     public List<bool> ignoreTempValues;
     public int MaxSize;
     public string MaxSizebuf;
@@ -21,7 +22,6 @@ public class Dialog_ChooseIgnored : Window
 
     private Vector2 scrollPosition = Vector2.zero;
     private float scrollViewHeight;
-    public List<PawnIgnoreData> tempPawnList = new List<PawnIgnoreData>();
 
     public Dialog_ChooseIgnored(Building_TeachingSpot spot)
     {
@@ -141,7 +141,7 @@ public class Dialog_ChooseIgnored : Window
         var width = fillRect.width - rect.xMax;
         var num = Text.CalcHeight(text, width);
         var num2 = Mathf.Max(80f, num);
-        var position = new Rect(8f, rowY + 12f, 30f, 30f);
+        _ = new Rect(8f, rowY + 12f, 30f, 30f);
         var rect2 = new Rect(0f, rowY, fillRect.width, num2);
         var isMouseOver = false;
         if (Widgets.CheckboxLabeledSelectable(rect2, ignorePawn.Name.ToString(), ref isMouseOver, ref toIgnore))
@@ -157,9 +157,8 @@ public class Dialog_ChooseIgnored : Window
         //Widgets.ThingIcon(position, leader, 1f);
 
         //Widgets.DrawRectFast(position, Color.white, null);
-        var label = string.Concat(new string[]
-        {
-        });
+        var label = string.Concat([
+        ]);
 
         //if (need.opinion < -20) GUI.color = Color.yellow;
         //if (need.opinion < -60) GUI.color = Color.red;

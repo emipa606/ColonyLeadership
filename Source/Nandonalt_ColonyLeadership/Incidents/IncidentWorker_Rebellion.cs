@@ -92,13 +92,5 @@ public class IncidentWorker_Rebellion : IncidentWorker
             "RebelLetterDesc".Translate(pawn.Name.ToStringShort), LetterDefOf.NegativeEvent, pawn);
 
         return true;
-
-        /**}
-        catch (Exception ex)
-        {
-            System.IO.File.WriteAllText("C:/Logs/debugLog.txt", ex.Message.ToString());
-            
-            return false;
-        }**/
     }
 }

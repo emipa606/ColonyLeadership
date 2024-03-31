@@ -4,15 +4,8 @@ using Verse.AI.Group;
 
 namespace Nandonalt_ColonyLeadership;
 
-public class LordToil_SetLeadership : LordToil
+public class LordToil_SetLeadership(IntVec3 spot) : LordToil
 {
-    private readonly IntVec3 spot;
-
-    public LordToil_SetLeadership(IntVec3 spot)
-    {
-        this.spot = spot;
-    }
-
     public override ThinkTreeDutyHook VoluntaryJoinDutyHookFor(Pawn p)
     {
         return DefDatabase<DutyDef>.GetNamed("GatherLeader").hook;

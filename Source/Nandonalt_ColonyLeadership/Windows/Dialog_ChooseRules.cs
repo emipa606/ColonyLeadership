@@ -7,9 +7,9 @@ namespace Nandonalt_ColonyLeadership;
 
 public class Dialog_ChooseRules : Window
 {
+    public readonly List<string> electFrequencyOptions = [..new[] { "3", "2", "1" }];
     public GovType chosenLeadership;
     protected string curName;
-    public List<string> electFrequencyOptions = new List<string>(new[] { "3", "2", "1" });
     public string electionFrequency;
     public int MaxSize;
     public string MaxSizebuf;
@@ -149,7 +149,7 @@ public class Dialog_ChooseRules : Window
             }
             else
             {
-                var newDays = getElectionDays(freq);
+                _ = getElectionDays(freq);
                 ConfigManager.setElectionsDays(getElectionDays(freq));
             }
 

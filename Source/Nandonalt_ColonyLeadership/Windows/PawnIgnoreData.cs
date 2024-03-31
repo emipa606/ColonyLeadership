@@ -2,14 +2,8 @@
 
 namespace Nandonalt_ColonyLeadership;
 
-public class PawnIgnoreData
+public class PawnIgnoreData(Pawn re, bool val = false)
 {
-    public Pawn reference;
-    public bool value;
-
-    public PawnIgnoreData(Pawn re, bool val = false)
-    {
-        value = val;
-        reference = re;
-    }
+    public readonly Pawn reference = re;
+    public bool value = val;
 }

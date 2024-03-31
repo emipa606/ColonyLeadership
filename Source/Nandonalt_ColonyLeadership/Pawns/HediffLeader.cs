@@ -74,7 +74,7 @@ public class HediffLeader : HediffWithComps
         Scribe_Values.Look(ref ticksLeader, "ticksLeader", ticksPeriod);
     }
 
-    public override void Notify_PawnDied()
+    public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
     {
         if (!isThisExpired())
         {

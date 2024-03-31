@@ -9,8 +9,8 @@ namespace Nandonalt_ColonyLeadership;
  */
 internal class Dialog_ChooseIgnoredGroup : Window
 {
+    public readonly List<PawnIgnoreData> group = new List<PawnIgnoreData>();
     private readonly Building_TeachingSpot spot;
-    public List<PawnIgnoreData> group = new List<PawnIgnoreData>();
 
     public Dialog_ChooseIgnoredGroup(List<PawnIgnoreData> group, ref Building_TeachingSpot spot)
     {

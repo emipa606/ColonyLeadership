@@ -12,7 +12,7 @@ internal class Job_Learn : JobDriver
     private readonly TargetIndex Facing = TargetIndex.B;
     private readonly TargetIndex Spot = TargetIndex.C;
     private Pawn setTeacher;
-    public List<SkillDef> skillPool = new List<SkillDef>();
+    public List<SkillDef> skillPool = [];
 
     protected Building_TeachingSpot Spott => (Building_TeachingSpot)job.GetTarget(TargetIndex.A).Thing;
 
@@ -185,7 +185,7 @@ internal class Job_Learn : JobDriver
 
         yield return Toils_Reserve.Release(Spot);
 
-        AddFinishAction(() =>
+        AddFinishAction(_ =>
         {
             if (Spott.currentLessonState is Building_TeachingSpot.LessonState.finishing
                 or Building_TeachingSpot.LessonState.finished)

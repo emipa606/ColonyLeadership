@@ -2,10 +2,10 @@
 
 public class GovType
 {
-    public string desc;
-    public string name;
-    public string nameFemale;
-    public string nameMale;
+    public readonly string desc;
+    public readonly string name;
+    public readonly string nameFemale;
+    public readonly string nameMale;
 
 
     public GovType(string name, string desc, string nameMale, string nameFemale = "")

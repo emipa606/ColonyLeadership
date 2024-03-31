@@ -17,11 +17,11 @@ public class ColonyLeadership
 
 
     public static string lastReadVersion = "none";
-    public static string newVersion = "v1.5";
-    public static List<GovType> govtypes = new List<GovType>();
+    public static readonly string newVersion = "v1.5";
+    public static readonly List<GovType> govtypes = [];
     public static GovType tempGov = null;
     public static GameInfo gameInfoTemp = null;
-    public static bool useLogging = false;
+    public static readonly bool useLogging = false;
 
 
     static ColonyLeadership()

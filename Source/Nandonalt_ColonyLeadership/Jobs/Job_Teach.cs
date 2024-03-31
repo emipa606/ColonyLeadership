@@ -13,7 +13,7 @@ internal class Job_Teach : JobDriver
     private const TargetIndex SpotIndex = TargetIndex.A;
 
 
-    public List<Building_Chalkboard> chalkboards = new List<Building_Chalkboard>();
+    public List<Building_Chalkboard> chalkboards = [];
 
 
     private string report = "";
@@ -111,10 +111,10 @@ internal class Job_Teach : JobDriver
                     continue;
                 }
 
-                var unused = TeachingUtility.getLeaderType(pawn);
+                _ = TeachingUtility.getLeaderType(pawn);
                 chalkboards.Add(chalk);
                 chalk.frame = -1;
-                Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlag.Things, true, false);
+                Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlagDefOf.Things, true, false);
             }
         };
 
@@ -163,7 +163,7 @@ internal class Job_Teach : JobDriver
                     }
 
                     chalk.frame++;
-                    Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlag.Things, true, false);
+                    Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlagDefOf.Things, true, false);
                 }
 
                 report = "TeachingDesc".Translate();
@@ -211,7 +211,7 @@ internal class Job_Teach : JobDriver
                         chalk.frame--;
                     }
 
-                    Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlag.Things, true, false);
+                    Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlagDefOf.Things, true, false);
                 }
             }
 
@@ -253,7 +253,7 @@ internal class Job_Teach : JobDriver
         };
 
 
-        AddFinishAction(() =>
+        AddFinishAction(_ =>
         {
             foreach (var chalk in chalkboards)
             {
@@ -264,7 +264,7 @@ internal class Job_Teach : JobDriver
 
                 chalk.frame = 0;
                 chalk.state = 0;
-                Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlag.Things, true, false);
+                Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlagDefOf.Things, true, false);
             }
 
             if (Spot.currentLessonState is Building_TeachingSpot.LessonState.finishing

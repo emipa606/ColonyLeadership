@@ -24,10 +24,10 @@ public class LeaderWindow : MainTabWindow
     private const float RelationsColumnWidth = 100f;
 
     private const float NameLeftMargin = 15f;
+
+
+    protected readonly List<Pawn> pawns = [];
     private bool pawnListDirty;
-
-
-    protected List<Pawn> pawns = new List<Pawn>();
 
 
     private Vector2 scrollPosition = Vector2.zero;
@@ -72,7 +72,7 @@ public class LeaderWindow : MainTabWindow
 
     public static void purgeLeadership(Pawn current)
     {
-        var unused = ConfigManager.getScientistLeaderDeffName();
+        _ = ConfigManager.getScientistLeaderDeffName();
         var h1 = (HediffLeader)current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
         var h2 = (HediffLeader)current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader2"));
         var h3 = (HediffLeader)current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));

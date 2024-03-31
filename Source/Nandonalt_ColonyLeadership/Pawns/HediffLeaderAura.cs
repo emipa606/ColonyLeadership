@@ -16,7 +16,7 @@ public class HediffLeaderAura : HediffWithComps
     }
 
 
-    public override void Notify_PawnDied()
+    public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
     {
         pawn.health.RemoveHediff(this);
     }
@@ -25,7 +25,7 @@ public class HediffLeaderAura : HediffWithComps
     {
         base.Tick();
 
-        var unused = pawn;
+        _ = pawn;
         counter += 1;
         if (counter < 100)
         {

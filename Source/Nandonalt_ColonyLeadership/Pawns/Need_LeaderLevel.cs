@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using Nandonalt_ColonyLeadership.Config;
 using RimWorld;
 using UnityEngine;
@@ -18,11 +17,11 @@ public class Need_LeaderLevel : Need
 
     public Need_LeaderLevel(Pawn pawn) : base(pawn)
     {
-        threshPercents = new List<float>
-        {
+        threshPercents =
+        [
             0.33f,
             0.66f
-        };
+        ];
     }
 
     public override int GUIChangeArrow
@@ -205,7 +204,7 @@ public class Need_LeaderLevel : Need
                         var isRebelling = false;
                         foreach (var pa in IncidentWorker_SetLeadership.getAllColonists())
                         {
-                            if (pa is { MentalState: { } } &&
+                            if (pa is { MentalState: not null } &&
                                 pa.MentalState.def == DefDatabase<MentalStateDef>.GetNamed("Rebelling"))
                             {
                                 isRebelling = true;

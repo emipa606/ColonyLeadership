@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Nandonalt_ColonyLeadership.Config;
 using RimWorld;
@@ -10,11 +11,11 @@ namespace Nandonalt_ColonyLeadership;
 
 internal class TeachingUtility
 {
-    public static float learningFactor = 0.28f;
-    public static int remainingDuration = 1100; // 15 second timer
-    public static int ritualDuration = 1100; // 15 seconds max
+    public static readonly float learningFactor = 0.28f;
+    public static int remainingDuration = 1100; // 15-second timer
+    public static readonly int ritualDuration = 1100; // 15 seconds max
     public static int reflectDuration = 600; // 10 seconds max
-    public static int minSkill = 8;
+    public static readonly int minSkill = 8;
 
 
     public static string getLeaderType(Pawn current)
@@ -170,14 +171,15 @@ internal class TeachingUtility
 
     public static bool ShouldAttendLesson(Pawn p, Building_TeachingSpot spot)
     {
-        if (!IsActorAvailable(spot.teacher))
+        if (IsActorAvailable(spot.teacher))
         {
-            AbortLesson(spot);
-            return false;
+            return p != spot.teacher && p.IsColonistPlayerControlled;
         }
 
+        AbortLesson(spot);
+        return false;
+
         //Everyone get over here!
-        return p != spot.teacher && p.IsColonistPlayerControlled;
     }
 
     public static void GetLessonGroup(Building_TeachingSpot spot, Map map, bool forced = false)
@@ -192,7 +194,7 @@ internal class TeachingUtility
         List<Pawn> listeners;
         if (forced)
         {
-            listeners = map.mapPawns.AllPawnsSpawned.FindAll(x =>
+            listeners = map.mapPawns.AllPawnsSpawned.ToList().FindAll(x =>
                 x.RaceProps.intelligence == Intelligence.Humanlike && !x.Downed && !x.Dead &&
                 x.CurJob.def.defName != "AttendLesson" &&
                 x.CurJob.def != JobDefOf.ExtinguishSelf &&
@@ -206,7 +208,7 @@ internal class TeachingUtility
         }
         else
         {
-            listeners = map.mapPawns.AllPawnsSpawned.FindAll(x =>
+            listeners = map.mapPawns.AllPawnsSpawned.ToList().FindAll(x =>
                 x.RaceProps.intelligence == Intelligence.Humanlike && !x.Downed && !x.Dead &&
                 x.CurJob.def.defName != "AttendLesson" &&
                 x.CurJob.def != JobDefOf.ExtinguishSelf &&
@@ -319,7 +321,7 @@ internal class TeachingUtility
         spot.ChangeState(Building_TeachingSpot.State.lesson, Building_TeachingSpot.LessonState.finished);
         //altar.currentState = Building_SacrificialAltar.State.finished;
 
-        var factionBase = (Settlement)spot.Map.info.parent;
+        _ = (Settlement)spot.Map.info.parent;
 
         Messages.Message("The lesson has finished.", TargetInfo.Invalid, MessageTypeDefOf.PositiveEvent);
     }

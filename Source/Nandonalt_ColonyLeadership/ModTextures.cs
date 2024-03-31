@@ -81,72 +81,85 @@ public class ModTextures
         ContentFinder<Texture2D>.Get("ColonyLeadership/TeachingBubbles/scientist3");
 
     public static readonly Texture2D waiting = ContentFinder<Texture2D>.Get("ColonyLeadership/TeachingBubbles/waiting");
-    public static List<Texture2D> icons_leader1 = new List<Texture2D>();
-    public static List<Texture2D> icons_leader2 = new List<Texture2D>();
-    public static List<Texture2D> icons_leader3 = new List<Texture2D>();
-    public static List<Texture2D> icons_leader4 = new List<Texture2D>();
+    public static readonly List<Texture2D> icons_leader1 = [];
+    public static readonly List<Texture2D> icons_leader2 = [];
+    public static readonly List<Texture2D> icons_leader3 = [];
+    public static readonly List<Texture2D> icons_leader4 = [];
 
-    public static Graphic CH_Empty = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Empty = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         ThingDef.Named("ChalkboardCL").graphicData.texPath, ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Botanist = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Botanist = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_botanist", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Botanist1 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Botanist1 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_botanist1", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Botanist2 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Botanist2 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_botanist2", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Warrior = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Warrior = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_warrior", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Warrior1 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Warrior1 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_warrior1", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Warrior2 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Warrior2 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_warrior2", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Carpenter = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Carpenter = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_carpenter", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Carpenter1 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Carpenter1 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_carpenter1", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Carpenter2 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Carpenter2 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_carpenter2", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Scientist = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Scientist = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_scientist", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Scientist1 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Scientist1 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_scientist1", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);
 
-    public static Graphic CH_Scientist2 = GraphicDatabase.Get(ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
+    public static readonly Graphic CH_Scientist2 = GraphicDatabase.Get(
+        ThingDef.Named("ChalkboardCL").graphicData.graphicClass,
         "ColonyLeadership/Chalkboard/ch_scientist2", ThingDef.Named("ChalkboardCL").graphic.Shader,
         ThingDef.Named("ChalkboardCL").graphicData.drawSize, ThingDef.Named("ChalkboardCL").graphicData.color,
         ThingDef.Named("ChalkboardCL").graphicData.colorTwo);

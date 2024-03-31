@@ -33,7 +33,7 @@ public class ITab_LessonSchedule : ITab
     {
         //GUI.BeginGroup(rect);
         //Rect position = new Rect(0f, 0f, rect.width, 65f);
-        var unused = rect;
+        _ = rect;
         hourWidth = 20.833334f;
         var num = 15f;
         var num2 = 250f;

@@ -52,7 +52,7 @@ public class JobArrestLeader : JobDriver
             {
                 Takee.ownership.UnclaimBed();
             }
-        }); //Pretty sure I just changed this code to say "If(!CanBeArrestedByMyself){... See !this.Takee.CanBeArrestedBy((Pawn)base.pawn)). Previously used to be !this.CanBeArrested() but this method no longer exists. 
+        }); //Pretty sure I just changed this code to say If(!CanBeArrestedByMyself){... See !this.Takee.CanBeArrestedBy((Pawn)base.pawn)). Previously used to be !this.CanBeArrested() but this method no longer exists. 
         yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch)
             .FailOnDespawnedNullOrForbidden(TargetIndex.A).FailOnDespawnedNullOrForbidden(TargetIndex.B)
             .FailOn(() => job.def == JobDefOf.Arrest && !Takee.CanBeArrestedBy(pawn))
@@ -119,7 +119,7 @@ public class JobArrestLeader : JobDriver
                     if (Takee.guest.Released)
                     {
                         Takee.guest.Released = false;
-                        Takee.guest.interactionMode = PrisonerInteractionModeDefOf.NoInteraction;
+                        Takee.guest.SetNoInteraction();
                     }
 
                     if (!Takee.IsPrisonerOfColony)

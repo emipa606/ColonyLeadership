@@ -26,11 +26,11 @@ public class IncidentWorker_SetLeadership : IncidentWorker
             switch (count)
             {
                 case < 1:
-                    ElectLeader(new List<Pawn>());
-                    ElectLeader(new List<Pawn>());
+                    ElectLeader([]);
+                    ElectLeader([]);
                     break;
                 case 1:
-                    ElectLeader(new List<Pawn>());
+                    ElectLeader([]);
                     break;
             }
         }
@@ -38,18 +38,12 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         {
             if (count < 1)
             {
-                ElectLeader(new List<Pawn>());
+                ElectLeader([]);
             }
         }
 
         return true;
         //   }
-        /**   catch(Exception ex)
-           {
-               System.IO.File.WriteAllText("C:/Logs/debugLog.txt", ex.Message.ToString());
-               return true;
-           }
-        **/
     }
 
     public List<Pawn> currentLeaders(out int count)
@@ -194,7 +188,7 @@ public class IncidentWorker_SetLeadership : IncidentWorker
             select grp.Key).First();
 
         float[] leaderAptitudes =
-            { getBotanistScore(most), getWarriorScore(most), getCarpenterScore(most), getScientistScore(most) };
+            [getBotanistScore(most), getWarriorScore(most), getCarpenterScore(most), getScientistScore(most)];
         Array.Sort(leaderAptitudes);
         var maxValue = leaderAptitudes[3];
         var secondMax = leaderAptitudes[2];
@@ -264,44 +258,6 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         return a + (r.NextDouble() * (b - a));
     }
 
-
-    /***
-    public static void setRuler(Pawn pawn, Hediff hediff, bool forced = false)
-    {
-        hediff.Severity = 0.1f;
-        pawn.health.AddHediff(hediff, null, null);
-        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("NewRuler"));
-
-        StringBuilder stringBuilder = new StringBuilder();
-        if (forced) { stringBuilder.AppendLine("RulerChosen " + pawn.Name.ToStringFull + hediff.LabelBase ); }
-        else
-        {
-            stringBuilder.AppendLine("RulerCrowned " + pawn.Name.ToStringFull + hediff.LabelBase);
-        }
-        if (Utility.getGov() != null)
-        {
-            Find.LetterStack.ReceiveLetter("NewLeaderLetterTitle".Translate(new object[] { Utility.getGov().nameMale }), stringBuilder.ToString(), LetterDefOf.PositiveEvent, pawn, null);
-        }
-        else
-        {
-            Find.LetterStack.ReceiveLetter("New Ruler", stringBuilder.ToString(), LetterDefOf.PositiveEvent, pawn, null);
-        }
-
-        foreach (Pawn p in getAllColonists())
-        {
-            if (p != pawn)
-            {
-                int num2 = p.relations.OpinionOf(pawn);
-                if (num2 <= -20)
-                {
-                    p.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("BadRuler"), null);
-                }
-                if (p.story.traits.HasTrait(TraitDef.Named("Jealous")) && TeachingUtility.leaderH(p) == null)
-                { p.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("CrownedRulerJealous"), null); }
-            }
-        }
-    }
-    **/
     public static void doElect(Pawn pawn, Hediff hediff, bool forced = false)
     {
         hediff.Severity = 0.1f;
@@ -360,7 +316,7 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         var organizer = GatheringsUtility.FindRandomGatheringOrganizer(Faction.OfPlayer, map, GatheringDefOf.Party);
 
 
-        //Pawn pawn = PartyUtility.FindRandomPartyOrganizer(Faction.OfPlayer, map);
+        //Pawn = PartyUtility.FindRandomPartyOrganizer(Faction.OfPlayer, map);
         if (organizer == null)
         {
             Messages.Message("ElectionFail_ColonistsNotFound", MessageTypeDefOf.RejectInput);

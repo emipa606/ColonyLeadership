@@ -11,13 +11,13 @@ public class Building_TeachingSpot : Building
 {
     private readonly MessageTypeDef nullSound = new MessageTypeDef();
     public bool destroyedFlag;
-    public List<Pawn> ignored = new List<Pawn>();
+    public List<Pawn> ignored = [];
     public int lastLessonTick = -999999;
     public int lastTryTick = -999999;
     public int lessonHour = 15;
-    public List<int> seasonSchedule = new List<int>(new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+    public List<int> seasonSchedule = [..new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }];
     public Pawn teacher;
-    public List<Pawn> teachers = new List<Pawn>(new Pawn[] { null, null });
+    public List<Pawn> teachers = [..new Pawn[] { null, null }];
     public Pawn tempTeacher;
 
     public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -264,7 +264,7 @@ public class Building_TeachingSpot : Building
         }
 
 
-        //FactionBase factionBase = (FactionBase)this.Map.info.parent;
+        //FactionBase = (FactionBase)this.Map.info.parent;
 
         //Messages.Message("LessonGathering".Translate(new object[] { factionBase.label, teacher.LabelShort }) + skills, TargetInfo.Invalid, nullSound);
 
