@@ -1,5 +1,9 @@
 # Changelog for ColonyLeadership
 
+1.5.1 - Fixed some missing translations, probably fixed an issue when running the mod in a translated language.
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.5.0 - Mod updated for 1.5 and passed autotests
 
 

@@ -15,8 +15,6 @@ public class IncidentWorker_SetLeadership : IncidentWorker
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        //  try
-        // {
         var pawns = new List<Pawn>();
         pawns.AddRange(getAllColonists());
         currentLeaders(out var count);
@@ -43,7 +41,6 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         }
 
         return true;
-        //   }
     }
 
     public List<Pawn> currentLeaders(out int count)
@@ -56,9 +53,6 @@ public class IncidentWorker_SetLeadership : IncidentWorker
             var h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
             var h2 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader2"));
             var h3 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));
-
-            //string sciLeaderDeffName = Nandonalt_ColonyLeadership.Config.ConfigManager.getScientistLeaderDeffName();
-
             var h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
             var h5 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader5"));
 
@@ -201,10 +195,6 @@ public class IncidentWorker_SetLeadership : IncidentWorker
                 maxValue = secondMax; //This will cause the leaders second most skilled proficiency to be their leadership type this election. 
             }
         }
-        /*  if (most == bestBotanist && maxValue == getBotanistScore(most)) targetLeader = "leader1";
-         if (most == bestWarrior && maxValue == getWarriorScore(most)) targetLeader = "leader2";
-          if (most == bestCarpenter && maxValue == getCarpenterScore(most)) targetLeader = "leader3";
-          if (most == bestScientist && maxValue == getScientistScore(most)) targetLeader = "leader4";*/
 
         if (maxValue == getBotanistScore(most))
         {
@@ -232,7 +222,7 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         if (toBeIgnored.Contains(most))
         {
             Messages.Message(
-                "Something bad happened on the election code. Try adding the leaders manually using dev mode.",
+                "SomethingBadHappenedWithElection".Translate(),
                 MessageTypeDefOf.NegativeEvent);
 
             return;
@@ -319,7 +309,7 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         //Pawn = PartyUtility.FindRandomPartyOrganizer(Faction.OfPlayer, map);
         if (organizer == null)
         {
-            Messages.Message("ElectionFail_ColonistsNotFound", MessageTypeDefOf.RejectInput);
+            Messages.Message("ElectionFail_ColonistsNotFound".Translate(), MessageTypeDefOf.RejectInput);
 
             return false;
         }
@@ -327,13 +317,14 @@ public class IncidentWorker_SetLeadership : IncidentWorker
         //RCellFinder.TryFindGatheringSpot(pawn, GatheringDef.Named(""), intVec)
         if (!RCellFinder.TryFindGatheringSpot(organizer, GatheringDefOf.Party, false, out var intVec))
         {
-            Messages.Message("Couldn't find a suitable safe spot for the election.", MessageTypeDefOf.RejectInput);
+            Messages.Message("NoSafeSpotElection".Translate(), MessageTypeDefOf.RejectInput);
 
             return false;
         }
 
         LordMaker.MakeNewLord(organizer.Faction, new LordJob_Joinable_SetLeadership(intVec), map);
-        Find.LetterStack.ReceiveLetter("Election", "ElectionGathering", LetterDefOf.PositiveEvent,
+        Find.LetterStack.ReceiveLetter("Election".Translate(), "ElectionGathering".Translate(),
+            LetterDefOf.PositiveEvent,
             new TargetInfo(intVec, map));
         return true;
     }

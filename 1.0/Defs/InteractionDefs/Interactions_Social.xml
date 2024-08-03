@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- Random social interactions -->
   <InteractionDef>
@@ -12,12 +12,12 @@
     <recipientThought>InspiratedL</recipientThought>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] inspired [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] inspired [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;Was inspired by [INITIATOR_nameDef].</li>
+        <li>r_logentry->Was inspired by [INITIATOR_nameDef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>

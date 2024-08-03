@@ -6,7 +6,6 @@ public class GameComponent_ColonyLeadership : GameComponent
 {
     public int chosenGov;
     public GovType chosenLeadership;
-    public int electionFrequency = 3;
 
     public int lastLessonTick = -999999;
 

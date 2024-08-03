@@ -9,7 +9,7 @@ internal class Utility
         get
         {
             var comp = getCLComp();
-            return comp != null && comp.chosenLeadership.name == "Dictatorship";
+            return comp != null && comp.chosenLeadership.name == "Dictatorship".Translate();
         }
     }
 
@@ -19,7 +19,7 @@ internal class Utility
         get
         {
             var comp = getCLComp();
-            return comp != null && comp.chosenLeadership.name == "Democracy";
+            return comp != null && comp.chosenLeadership.name == "Democracy".Translate();
         }
     }
 
@@ -29,7 +29,7 @@ internal class Utility
         get
         {
             var comp = getCLComp();
-            return comp != null && comp.chosenLeadership.name == "Monarchy";
+            return comp != null && comp.chosenLeadership.name == "Monarchy".Translate();
         }
     }
 

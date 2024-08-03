@@ -82,4 +82,37 @@
   <Democracy>Démocratie</Democracy>
   <DemocracyDesc>Les colons voteront pour leurs dirigeants. Le mandat de chaque dirigeant est d'un an.</DemocracyDesc>
   <Leader>Leader</Leader>
+  <ElectionsPerSeason>Élections par saison</ElectionsPerSeason>
+  <SomethingBadHappenedWithElection>Un problème s'est produit au niveau du code électoral. Essayez d'ajouter les leaders manuellement en utilisant le mode "dev".</SomethingBadHappenedWithElection>
+  <LeaderHasStartedLesson>Un animateur a commencé une leçon sur le lieu d'enseignement.</LeaderHasStartedLesson>
+  <SpotIsUnavailable>La place n'est pas disponible.</SpotIsUnavailable>
+  <ON>ON</ON>
+  <OFF>OFF</OFF>
+  <GovernmentTypes>Types de gouvernements</GovernmentTypes>
+  <PerSeason>Par saison</PerSeason>
+  <ElectionFrequency>fréquence des élections</ElectionFrequency>
+  <ChooseIgnorePawns>Choisir d'ignorer les pions</ChooseIgnorePawns>
+  <ChooseIgnorePawnsOK>Le bouton "Ok" a été actionné pour choisir l'option ignorée.</ChooseIgnorePawnsOK>
+  <RemoveFromIgnore>Suppression d'un pion de la liste des ignorés : {0}</RemoveFromIgnore>
+  <AddingToIgnore>Ajout d'un pion à la liste des ignorés : {0}</AddingToIgnore>
+  <PawnNameDebug>Nom du pion : {0}, VAL = {1}</PawnNameDebug>
+  <NoSafeSpotElection>Il n'a pas été possible de trouver un endroit sûr pour l'élection.</NoSafeSpotElection>
+  <BuffSettingText>Ajoute des buffs à la chirurgie médicale et à la négociation si elle est désactivée.</BuffSettingText>
+  <ScientistPsychicSensitivity>Scientifique Sensibilité psychique</ScientistPsychicSensitivity>
+  <ScientistLeaderPsychicSensitivity>Animateur scientifique Sensibilité psychique</ScientistLeaderPsychicSensitivity>
+  <GovTypeFaq>FAQ :
+ - Comment changer de type de gouvernement ?
+     -&gt; Entrez dans le mode Développement et allez au Menu Leadership en bas de l'écran.
+	    de l'écran. De là, vous verrez qu'il y a plusieurs nouveaux boutons"
+	    précédés de DEV. Il vous suffit de sélectionner le bouton "Réinitialiser le type de gouvernement".
+		
+ - Mes colons se rassemblent pour les élections mais ne votent pas, que se passe-t-il ?
+    -&gt; Vérifiez votre planning de travail, si un colon est programmé pour passer d'une tâche à une autre pendant les élections, il quittera le forum.
+       pendant les élections, il laissera l'élection en cours et ne votera pas. Il est préférable de mettre
+       Il est utile de régler son horaire de travail sur Aucun pendant les élections.
+ - Comment modifier la fréquence des élections ?
+     -&gt; Lorsque vous définissez votre type de commandement, vous disposez d'un menu d'options vous permettant de choisir entre une, deux ou trois fois par saison pour organiser les élections.
+	 
+Si vous avez des problèmes, commentez sur la page de l'atelier vapeur et je ferai de mon mieux pour les résoudre !
+ - McKay</GovTypeFaq>
 </LanguageData>

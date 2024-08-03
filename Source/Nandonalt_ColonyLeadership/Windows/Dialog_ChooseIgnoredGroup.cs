@@ -9,7 +9,7 @@ namespace Nandonalt_ColonyLeadership;
  */
 internal class Dialog_ChooseIgnoredGroup : Window
 {
-    public readonly List<PawnIgnoreData> group = new List<PawnIgnoreData>();
+    public readonly List<PawnIgnoreData> group;
     private readonly Building_TeachingSpot spot;
 
     public Dialog_ChooseIgnoredGroup(List<PawnIgnoreData> group, ref Building_TeachingSpot spot)
@@ -53,7 +53,6 @@ internal class Dialog_ChooseIgnoredGroup : Window
             if (!p.Dead)
             {
                 ignoreList.CheckboxLabeled(p.LabelShort, ref piData.value);
-                //ignoreTempValue[ignoreTemp.IndexOf(p)] = b;
             }
         }
 

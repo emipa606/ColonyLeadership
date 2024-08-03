@@ -58,7 +58,6 @@ public class Dialog_ChooseLeader : Window
                 var h3 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));
                 var h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named(sciLeaderDeffName));
                 var h5 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leaderExpired"));
-                //Hediff h6 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("ruler1"));
                 if (h1 == null && h2 == null && h3 == null && h4 == null && h5 == null &&
                     !current.WorkTagIsDisabled(WorkTags.Social))
                 {

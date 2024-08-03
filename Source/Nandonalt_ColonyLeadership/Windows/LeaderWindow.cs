@@ -9,23 +9,6 @@ namespace Nandonalt_ColonyLeadership;
 
 public class LeaderWindow : MainTabWindow
 {
-    private const float FactionColorRectSize = 15f;
-
-    private const float FactionColorRectGap = 10f;
-
-    private const float RowMinHeight = 80f;
-
-    private const float LabelRowHeight = 50f;
-
-    private const float TypeColumnWidth = 100f;
-
-    private const float NameColumnWidth = 220f;
-
-    private const float RelationsColumnWidth = 100f;
-
-    private const float NameLeftMargin = 15f;
-
-
     protected readonly List<Pawn> pawns = [];
     private bool pawnListDirty;
 
@@ -49,27 +32,6 @@ public class LeaderWindow : MainTabWindow
         return pawns;
     }
 
-    public override void PostOpen()
-    {
-        base.PostOpen();
-
-        if (ColonyLeadership.lastReadVersion == ColonyLeadership.newVersion)
-        {
-            return;
-        }
-
-        var window = new Dialog_MessageBox(ColonyLeadership.updateNotes, "Thanks!")
-        {
-            soundAmbient = SoundDefOf.RadioComms_Ambience
-        };
-        Find.WindowStack.Add(window);
-        ColonyLeadership.lastReadVersion = ColonyLeadership.newVersion;
-        ColonyLeadership.Save();
-        DefDatabase<MainButtonDef>.GetNamed("LeaderTab").ClearCachedData();
-        DefDatabase<MainButtonDef>.GetNamed("LeaderTab").label = "Leadership";
-    }
-
-
     public static void purgeLeadership(Pawn current)
     {
         _ = ConfigManager.getScientistLeaderDeffName();
@@ -83,7 +45,6 @@ public class LeaderWindow : MainTabWindow
             HediffDef.Named("leader5")); //Sci leader no psycic
 
         var h6 = (HediffLeader)current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leaderExpired"));
-        //HediffLeader h6 = (HediffLeader)current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("1"));
 
         if (h1 != null)
         {
@@ -130,13 +91,7 @@ public class LeaderWindow : MainTabWindow
             var h2 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader2"));
             var h3 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));
 
-
             var h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named(sciLeaderDeffName));
-            //Hediff h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
-            //Hediff h5 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader5"));
-
-            //Hediff h6 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("ruler1"));
-
 
             if (h1 != null || h2 != null || h3 != null || h4 != null)
             {
@@ -174,7 +129,6 @@ public class LeaderWindow : MainTabWindow
         }
 
         BuildPawnList();
-        // GenDraw.DrawRadiusRing(pawns[0].Position, 10f);
         var position = new Rect(0f, 0f, fillRect.width, fillRect.height);
         GUI.BeginGroup(position);
         Text.Font = GameFont.Small;
@@ -183,10 +137,6 @@ public class LeaderWindow : MainTabWindow
         Text.Font = GameFont.Medium;
         Widgets.Label(new Rect(5f, 5f, 140f, 30f), "Leaders");
         Text.Font = GameFont.Small;
-        var pawnCount = new List<Pawn>();
-        var needNewLeaders = false;
-        pawnCount.AddRange(getAllColonists());
-
         var questionMarkBtn = new Rect(fillRect.width - 50f, 5f, 40f, 40f);
         if (Widgets.ButtonText(questionMarkBtn, "?", true, false))
         {
@@ -195,61 +145,10 @@ public class LeaderWindow : MainTabWindow
 
         if (Prefs.DevMode)
         {
-            if (pawns.NullOrEmpty())
-            {
-                needNewLeaders = true;
-            }
-
-            if (pawns.Count <= 1 && pawnCount.Count >= 5)
-            {
-                needNewLeaders = true;
-            }
-
-            //if (flag == true && Find.VisibleMap != null)
-            //{
             var button = new Rect(90f, 5f, 200f, 40f);
             if (Widgets.ButtonText(button, "DEV: Reset Leadership Type", true, false))
             {
                 Find.WindowStack.Add(new Dialog_ChooseRules());
-                /*
-                TooltipHandler.TipRegion(button, "Gather colonists to vote for their leaders. Will start a election on the visible map.");
-                if (Find.VisibleMap.lordManager.lords.Find(x => x.LordJob.GetType() == typeof(LordJob_Joinable_LeaderElection)) != null)
-                {
-                    Messages.Message("The colony is already gathering for an election.", MessageSound.RejectInput);
-                }
-                else
-                {
-                    List<Pawn> canBeVoted = new List<Pawn>();
-                    canBeVoted.AddRange(getAllColonists());
-                    List<Pawn> tpawns2 = new List<Pawn>();
-                    foreach (Pawn current in canBeVoted)
-                    {
-                        Hediff h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
-                        Hediff h2 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader2"));
-                        Hediff h3 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader3"));
-                        Hediff h4 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
-                        Hediff h5 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leaderExpired"));
-                        if (h1 != null || h2 != null || h3 != null || h4 != null || h5 != null) { tpawns2.Add(current); }
-                        if (current.story.WorkTagIsDisabled(WorkTags.Social)) { tpawns2.Add(current); }
-                    }
-                    foreach (Pawn current in tpawns2)
-                    {
-                        canBeVoted.Remove(current);
-                    }
-                    if (canBeVoted.NullOrEmpty())
-                    {
-                        Messages.Message("No colonist is able to be a leader.", MessageSound.Negative);
-                    }
-                    else
-                    {
-
-                        //IncidentDef.Named("LeaderElection").Worker.TryExecute(parms);
-                        IncidentWorker_LeaderElection.TryStartGathering(Find.VisibleMap);
-                    }
-
-                }
-                */
-                //  }
             }
         }
 
@@ -261,20 +160,11 @@ public class LeaderWindow : MainTabWindow
             stg = "SetDictator".Translate();
         }
 
-
-        //if (Utility.isMonarchy) stg = "SetRuler";
-        //if ((Prefs.DevMode || (Utility.isDictatorship && pawns.Count() <= 0) || (Utility.isMonarchy && pawns.Count() <= 0)) && Widgets.ButtonText(button3, stg, true, false, true))
         if ((Prefs.DevMode || Utility.isDictatorship && pawns.Count <= 0) &&
             Widgets.ButtonText(button3, stg, true, false))
         {
             Find.WindowStack.Add(new Dialog_ChooseLeader());
         }
-
-        //if ((Prefs.DevMode || (Utility.isDictatorship && pawns.Count() <= 0)) && Widgets.ButtonText(button3, stg, true, false, true))
-        //{
-        //    Find.WindowStack.Add(new Dialog_ChooseLeader());
-        //}
-
 
         var button2 = new Rect(460f, 5f, 150f, 40f);
         if (Prefs.DevMode && Widgets.ButtonText(button2, "DEV: Purge Leaders", true, false))
@@ -340,7 +230,6 @@ public class LeaderWindow : MainTabWindow
 
     private static string leaderType(Pawn current)
     {
-        var sciLeaderDeffName = ConfigManager.getScientistLeaderDeffName();
         var h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
         if (h1 != null)
         {
@@ -359,7 +248,6 @@ public class LeaderWindow : MainTabWindow
             return "leader3";
         }
 
-        //h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named(sciLeaderDeffName));
         h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
         if (h1 != null)
         {
@@ -375,7 +263,6 @@ public class LeaderWindow : MainTabWindow
 
     private string leaderLabel(Pawn current)
     {
-        var sciLeaderDeffName = ConfigManager.getScientistLeaderDeffName();
         var h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
         if (h1 != null)
         {
@@ -394,7 +281,6 @@ public class LeaderWindow : MainTabWindow
             return h1.Label;
         }
 
-        //h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named(sciLeaderDeffName));
         h1 = current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader4"));
         if (h1 != null)
         {
@@ -451,7 +337,6 @@ public class LeaderWindow : MainTabWindow
         Text.Anchor = TextAnchor.UpperLeft;
         Widgets.ThingIcon(position, leader);
 
-        //Widgets.DrawRectFast(position, Color.white, null);
         var label = $"{leader.Name.ToStringFull}\n   {leaderLabel(leader)}\n";
         if (need.opinion < -20)
         {

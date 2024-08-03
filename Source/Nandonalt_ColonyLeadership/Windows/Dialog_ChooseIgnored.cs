@@ -47,11 +47,9 @@ public class Dialog_ChooseIgnored : Window
     public override void DoWindowContents(Rect inRect)
     {
         Text.Font = GameFont.Small;
-        var pressedReturn = false;
 
         if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Return)
         {
-            pressedReturn = true;
             Event.current.Use();
         }
 
@@ -59,7 +57,7 @@ public class Dialog_ChooseIgnored : Window
         GUI.BeginGroup(position);
         Text.Font = GameFont.Small;
         GUI.color = Color.white;
-        Widgets.Label(new Rect(5f, 5f, 140f, 30f), "Choose Ignore Pawns");
+        Widgets.Label(new Rect(5f, 5f, 140f, 30f), "ChooseIgnorePawns".Translate());
 
         var outRect =
             new Rect(0f, 50f, position.width,
@@ -92,9 +90,9 @@ public class Dialog_ChooseIgnored : Window
 
         Widgets.EndScrollView();
         var endRect = new Rect(0f, position.height - 30f, position.width, 25f);
-        if (Widgets.ButtonText(endRect, "OK"))
+        if (Widgets.ButtonText(endRect, "OK".Translate()))
         {
-            Logger.log("Okay button hit for choose ignored.");
+            Logger.log("ChooseIgnorePawnsOK".Translate());
             updatePawnIgnoreData();
             Find.WindowStack.TryRemove(this);
         }
@@ -115,7 +113,7 @@ public class Dialog_ChooseIgnored : Window
                     continue;
                 }
 
-                Logger.log($"Removing Pawn from Ignore list: {p.Name}");
+                Logger.log("RemoveFromIgnore".Translate(p.Name.ToStringFull));
                 spot.ignored.Remove(p);
             }
             else
@@ -125,7 +123,7 @@ public class Dialog_ChooseIgnored : Window
                     continue;
                 }
 
-                Logger.log($"Adding Pawn from Ignore list: {p.Name}");
+                Logger.log("AddingToIgnore".Translate(p.Name.ToStringFull));
                 spot.ignored.Add(p);
             }
         }
@@ -134,7 +132,6 @@ public class Dialog_ChooseIgnored : Window
     private float DrawIgnorePawnRow(Pawn ignorePawn, float rowY, Rect fillRect, ref bool toIgnore)
     {
         var rect = new Rect(40f, rowY, 300f, 80f);
-        //Need_LeaderLevel need = (Need_LeaderLevel)leader.needs.AllNeeds.Find((Need x) => x.def == DefDatabase<NeedDef>.GetNamed("LeaderLevel"));
         var stringBuilder = new StringBuilder();
         stringBuilder.AppendLine("");
         var text = stringBuilder.ToString();
@@ -146,7 +143,7 @@ public class Dialog_ChooseIgnored : Window
         var isMouseOver = false;
         if (Widgets.CheckboxLabeledSelectable(rect2, ignorePawn.Name.ToString(), ref isMouseOver, ref toIgnore))
         {
-            Logger.log($"Pawn Name: {ignorePawn.Name}, VAL = {toIgnore}");
+            Logger.log("PawnNameDebug".Translate(ignorePawn.Name.ToStringFull, toIgnore.ToString()));
 
             toIgnore = !toIgnore;
         }
@@ -154,14 +151,7 @@ public class Dialog_ChooseIgnored : Window
         Text.Font = GameFont.Medium;
 
         Text.Anchor = TextAnchor.UpperLeft;
-        //Widgets.ThingIcon(position, leader, 1f);
-
-        //Widgets.DrawRectFast(position, Color.white, null);
-        var label = string.Concat([
-        ]);
-
-        //if (need.opinion < -20) GUI.color = Color.yellow;
-        //if (need.opinion < -60) GUI.color = Color.red;
+        var label = string.Concat([]);
 
         Widgets.Label(rect, label);
         GUI.color = Color.white;

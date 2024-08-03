@@ -8,10 +8,6 @@ namespace Nandonalt_ColonyLeadership;
 
 public class JobArrestLeader : JobDriver
 {
-    private const TargetIndex TakeeIndex = TargetIndex.A;
-
-    private const TargetIndex BedIndex = TargetIndex.B;
-
     protected Pawn Takee => (Pawn)job.GetTarget(TargetIndex.A).Thing;
 
     protected Building_Bed DropBed => (Building_Bed)job.GetTarget(TargetIndex.B).Thing;

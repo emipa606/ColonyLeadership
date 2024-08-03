@@ -58,10 +58,6 @@ public class HediffLeaderAura : HediffWithComps
                     break;
             }
 
-            /*
-                List<Thing> list = GenRadial.RadialDistinctThingsAround(actor.Position, actor.Map, 15f, true).ToList<Thing>();
-                foreach (Thing current in list)
-                {}*/
             var distance = (pawn.Position - leader.Position).LengthHorizontal;
 
             if (distance <= 15f)

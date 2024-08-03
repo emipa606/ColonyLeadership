@@ -9,13 +9,7 @@ public class Dialog_ChooseRules : Window
 {
     public readonly List<string> electFrequencyOptions = [..new[] { "3", "2", "1" }];
     public GovType chosenLeadership;
-    protected string curName;
     public string electionFrequency;
-    public int MaxSize;
-    public string MaxSizebuf;
-    public int MinSize;
-    public string MinSizebuf;
-    public bool permanent;
 
     private bool updateLabel;
 
@@ -52,11 +46,11 @@ public class Dialog_ChooseRules : Window
                     delegate { TooltipHandler.TipRegion(inRect, gov.desc); }));
             }
 
-            Find.WindowStack.Add(new FloatMenu(list, "Government Types"));
+            Find.WindowStack.Add(new FloatMenu(list, "GovernmentTypes".Translate()));
         }
 
         listing_Standard.Gap(24f);
-        listing_Standard.Label("Elections per Season");
+        listing_Standard.Label("ElectionsPerSeason".Translate());
 
         if (!updateLabel)
         {
@@ -72,21 +66,22 @@ public class Dialog_ChooseRules : Window
             foreach (var f in electFrequencyOptions)
             {
                 electFreqList.Add(new FloatMenuOption(f, delegate
-                {
-                    electionFrequency = f;
-                    freqLabel = f;
-                    updateLabel = true;
-                }, MenuOptionPriority.Default, delegate { TooltipHandler.TipRegion(inRect, "PerSeason"); }));
+                    {
+                        electionFrequency = f;
+                        freqLabel = f;
+                        updateLabel = true;
+                    }, MenuOptionPriority.Default,
+                    delegate { TooltipHandler.TipRegion(inRect, "PerSeason".Translate()); }));
             }
 
-            Find.WindowStack.Add(new FloatMenu(electFreqList, "election frequency"));
+            Find.WindowStack.Add(new FloatMenu(electFreqList, "ElectionFrequency".Translate()));
         }
 
 
         listing_Standard.Gap(24f);
-        listing_Standard.Label("Scientist Psychic Sensitivity");
+        listing_Standard.Label("ScientistPsychicSensitivity".Translate());
         var isScientistSensitiveToPsychic = ConfigManager.isPsychicSensitivityForScientist();
-        var sensitivityLabel = isScientistSensitiveToPsychic ? "ON" : "OFF";
+        var sensitivityLabel = isScientistSensitiveToPsychic ? "ON".Translate() : "OFF".Translate();
 
         const string classicSciLeader = "leader4";
         const string noSensitivitySciLeader = "leader5";
@@ -96,29 +91,21 @@ public class Dialog_ChooseRules : Window
         {
             var sensitivityOptions = new List<FloatMenuOption>
             {
-                new FloatMenuOption("ON", delegate
+                new FloatMenuOption("ON".Translate(), delegate
                     {
                         ConfigManager.setPsychicSensitivityForScientist(true);
                         LeaderWindow.changeLeaderType(noSensitivitySciLeader, classicSciLeader);
                     }, MenuOptionPriority.Default,
-                    delegate
-                    {
-                        TooltipHandler.TipRegion(inRect,
-                            "Adds Buffs to medical surgery and negotiation if turned off.");
-                    }),
-                new FloatMenuOption("OFF", delegate
+                    delegate { TooltipHandler.TipRegion(inRect, "BuffSettingText".Translate()); }),
+                new FloatMenuOption("OFF".Translate(), delegate
                     {
                         ConfigManager.setPsychicSensitivityForScientist(false);
                         LeaderWindow.changeLeaderType(classicSciLeader, noSensitivitySciLeader);
                     }, MenuOptionPriority.Default,
-                    delegate
-                    {
-                        TooltipHandler.TipRegion(inRect,
-                            "Adds Buffs to medical surgery and negotiation if turned off.");
-                    })
+                    delegate { TooltipHandler.TipRegion(inRect, "BuffSettingText".Translate()); })
             };
 
-            Find.WindowStack.Add(new FloatMenu(sensitivityOptions, "Science Leader Psycic Sensitivty"));
+            Find.WindowStack.Add(new FloatMenu(sensitivityOptions, "ScientistLeaderPsychicSensitivity".Translate()));
         }
 
 
@@ -138,7 +125,7 @@ public class Dialog_ChooseRules : Window
             }
 
             Find.WindowStack.TryRemove(this);
-            if (chosenLeadership.name == "Dictatorship".Translate() || chosenLeadership.name == "Monarchy")
+            if (chosenLeadership.name == "Dictatorship".Translate() || chosenLeadership.name == "Monarchy".Translate())
             {
                 foreach (var p in IncidentWorker_SetLeadership.getAllColonists())
                 {

@@ -188,16 +188,14 @@ public class HediffLeader : HediffWithComps
             var hediff = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named(label));
             if (hediff != null)
             {
-                //hediff.Severity = Need.CurLevel;
+                continue;
             }
-            else
-            {
-                hediff = HediffMaker.MakeHediff(HediffDef.Named(label), currentPawn);
-                hediff.Severity = Mathf.Clamp(Need.CurLevel, 0.01f, 1f);
-                var hl = (HediffLeaderAura)hediff;
-                hl.leader = pawn;
-                currentPawn.health.AddHediff(hl);
-            }
+
+            hediff = HediffMaker.MakeHediff(HediffDef.Named(label), currentPawn);
+            hediff.Severity = Mathf.Clamp(Need.CurLevel, 0.01f, 1f);
+            var hl = (HediffLeaderAura)hediff;
+            hl.leader = pawn;
+            currentPawn.health.AddHediff(hl);
         }
     }
 }

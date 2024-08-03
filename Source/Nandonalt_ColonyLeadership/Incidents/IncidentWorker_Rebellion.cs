@@ -45,10 +45,6 @@ public class IncidentWorker_Rebellion : IncidentWorker
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        //try
-        //{
-
-
         var map = (Map)parms.target;
 
         var pawns = IncidentWorker_SetLeadership.getAllColonists();
@@ -80,13 +76,6 @@ public class IncidentWorker_Rebellion : IncidentWorker
         }
 
         pawn.mindState.mentalStateHandler.TryStartMentalState(DefDatabase<MentalStateDef>.GetNamed("Rebelling"));
-        var s = "He";
-        if (pawn.gender == Gender.Female)
-        {
-            s = "She";
-        }
-
-        //                Find.LetterStack.ReceiveLetter("RebelLetter".Translate(), "RebelLetterDesc".Translate(new object[] { pawn.Name.ToStringShort }), LetterDefOf.ThreatBig, pawn, null);
 
         Find.LetterStack.ReceiveLetter("RebelLetter".Translate(),
             "RebelLetterDesc".Translate(pawn.Name.ToStringShort), LetterDefOf.NegativeEvent, pawn);

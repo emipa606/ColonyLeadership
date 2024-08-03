@@ -82,4 +82,37 @@
   <Democracy>Демократия</Democracy>
   <DemocracyDesc>Колонисты будут голосовать за своих лидеров. Мандат каждого лидера составляет 1 год.</DemocracyDesc>
   <Leader>Лидер</Leader>
+  <ElectionsPerSeason>Выборы за сезон</ElectionsPerSeason>
+  <SomethingBadHappenedWithElection>Что-то не так произошло в коде выборов. Попробуйте добавить лидеров вручную, используя режим dev.</SomethingBadHappenedWithElection>
+  <LeaderHasStartedLesson>Лидер начал урок на учебном месте.</LeaderHasStartedLesson>
+  <SpotIsUnavailable>Место недоступно.</SpotIsUnavailable>
+  <ON>НА</ON>
+  <OFF>OFF</OFF>
+  <GovernmentTypes>Виды правительства</GovernmentTypes>
+  <PerSeason>За сезон</PerSeason>
+  <ElectionFrequency>частота выборов</ElectionFrequency>
+  <ChooseIgnorePawns>Выберите пешки для игнорирования</ChooseIgnorePawns>
+  <ChooseIgnorePawnsOK>Кнопка "Ок" нажата, выбор проигнорирован.</ChooseIgnorePawnsOK>
+  <RemoveFromIgnore>Удаление пешки из списка игнорирования: {0}</RemoveFromIgnore>
+  <AddingToIgnore>Добавление пешки в список игнорирования: {0}</AddingToIgnore>
+  <PawnNameDebug>Имя пешки: {0}, VAL = {1}</PawnNameDebug>
+  <NoSafeSpotElection>Не удалось найти подходящее безопасное место для выборов.</NoSafeSpotElection>
+  <BuffSettingText>Добавляет баффы к медицинской хирургии и переговорам, если они отключены.</BuffSettingText>
+  <ScientistPsychicSensitivity>Ученый Экстрасенсорная чувствительность</ScientistPsychicSensitivity>
+  <ScientistLeaderPsychicSensitivity>Научный руководитель Психическая чувствительность</ScientistLeaderPsychicSensitivity>
+  <GovTypeFaq>ВОПРОСЫ И ОТВЕТЫ:
+ - Как переключить тип правительства?
+     -&gt; Войдите в режим разработки и перейдите в меню лидеров в нижней части
+	    экрана. Там вы увидите, что появилось несколько новых кнопок"
+	    с предлогом DEV. Просто выберите кнопку с надписью Reset Leadership Type.
+		
+ - Мои колонисты собираются на выборы, но на самом деле не голосуют, что происходит?
+    -&gt; Проверьте расписание заданий, если колонист должен переключиться с одного задания на другое
+       во время выборов, они оставят выборы и не проголосуют. Это поможет установить
+       расписание работы на время выборов.
+ - Как изменить частоту выборов?
+     -&gt; Когда вы перейдете к настройке типа руководства, у вас появится меню, в котором можно выбрать, один, два или три раза в сезон проводить выборы.
+	 
+Если у вас возникнут проблемы, пишите в комментариях на странице мастерской steam, и я сделаю все возможное, чтобы решить их!
+ - Маккей</GovTypeFaq>
 </LanguageData>

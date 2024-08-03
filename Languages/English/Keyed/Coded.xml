@@ -1,11 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- ELECTIONS -->
   <Election>Election</Election>
+  <ElectionsPerSeason>Elections per season</ElectionsPerSeason>
   <ElectionGathering>The colonists are gathering to vote for new leader(s).</ElectionGathering>
   <ElectionFinished>The election has finished.</ElectionFinished>
   <ElectionNoAttendees>Nobody attended the election.</ElectionNoAttendees>
   <AttendingElectionDesc>Attending election</AttendingElectionDesc>
+  <SomethingBadHappenedWithElection>Something bad happened on the election code. Try adding the leaders manually using dev mode.</SomethingBadHappenedWithElection>
   <ElectionFail_NoAbleLeader>Tried to start a election but no colonist is able to be a leader. Remember that social skill is needed.</ElectionFail_NoAbleLeader>
   <ElectionFail_ColonistsNotFound>Couldn't find a colonist to start the election. This can be caused by: colonists sleeping, assigned to non-joy times, starvation or health issues.</ElectionFail_ColonistsNotFound>
   <ElectionFail_NoDemocracy>Elections will not happen because this colony is not a democracy.</ElectionFail_NoDemocracy>
@@ -27,6 +29,7 @@
   <LeaderEndLetterDescArrested>{0} is no longer a leader and was arrested by rebelling colonists.</LeaderEndLetterDescArrested>
   <LeaderLevel>Leader level:</LeaderLevel>
   <AverageOpinion>Average opinion of me:</AverageOpinion>
+  <LeaderHasStartedLesson>A leader has started a lesson on the teaching spot.</LeaderHasStartedLesson>
   <!-- TEACHING -->
   <TeacherUnavailable>Teacher is unavailable.</TeacherUnavailable>
   <TeacherUnavailableNamed>The teacher, {0}, is unavaialable.</TeacherUnavailableNamed>
@@ -48,6 +51,7 @@
   <OnlyTeachIfSkill>"The teacher will only teach a skill if the level is above {0}. Skills related to this teacher: </OnlyTeachIfSkill>
   <!-- BUILDINGS -->
   <OnlyOnePerColony>Only one {0} allowed per colony</OnlyOnePerColony>
+  <SpotIsUnavailable>The spot is unavailable.</SpotIsUnavailable>
   <!-- INCIDENTS -->
   <Rebellion>Rebellion</Rebellion>
   <RebelLetter>Rebel!</RebelLetter>
@@ -87,4 +91,34 @@
   <Democracy>Democracy</Democracy>
   <DemocracyDesc>Colonists will vote for their leaders. The mandate for each leadership is 1 year.</DemocracyDesc>
   <Leader>Leader</Leader>
+  <ON>ON</ON>
+  <OFF>OFF</OFF>
+  <GovernmentTypes>Government Types</GovernmentTypes>
+  <ElectionsPerSeason>Elections per Season</ElectionsPerSeason>
+  <PerSeason>Per Season</PerSeason>
+  <ElectionFrequency>election frequency</ElectionFrequency>
+  <ChooseIgnorePawns>Choose Ignore Pawns</ChooseIgnorePawns>
+  <ChooseIgnorePawnsOK>Okay button hit for choose ignored.</ChooseIgnorePawnsOK>
+  <RemoveFromIgnore>Removing Pawn from Ignore list: {0}</RemoveFromIgnore>
+  <AddingToIgnore>Adding Pawn to Ignore list: {0}</AddingToIgnore>
+  <PawnNameDebug>Pawn Name: {0}, VAL = {1}</PawnNameDebug>
+  <NoSafeSpotElection>Couldn't find a suitable safe spot for the election.</NoSafeSpotElection>
+  <BuffSettingText>Adds Buffs to medical surgery and negotiation if turned off.</BuffSettingText>
+  <ScientistPsychicSensitivity>Scientist Psychic Sensitivity</ScientistPsychicSensitivity>
+  <ScientistLeaderPsychicSensitivity>Science Leader Psycic Sensitivty</ScientistLeaderPsychicSensitivity>
+  <GovTypeFaq>FAQ:
+ - How do I switch government types?
+     -> Enter Development mode, and proceed to the Leadership Menu at the bottom 
+	    of the screen. From there, you will see that there are several new buttons"
+	    prepended with DEV. Simply select the button that says Reset Leadership Type.
+		
+ - My Colonists are gathering for elections but they don't actually vote, what's going on?
+    -> Check your job schedule, if a colonist is scheduled to switch from one task to another
+       during elections, they'll leave the election in progress and won't vote. It helps to set
+       their work schedule to Any during elections.
+ - How do I change election frequency?
+     -> When you go to set your leadership type, you will have an options menu to select either once, twice, or three times a season to hold elections.
+	 
+If you have any problems, comment on the steam workshop page and I'll do my best to address them!
+ - McKay</GovTypeFaq>
 </LanguageData>

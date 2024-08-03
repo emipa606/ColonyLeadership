@@ -238,7 +238,7 @@ public class Building_TeachingSpot : Building
 
 //                        Messages.Message("A leader has started a lesson on the teaching spot.", TargetInfo.Invalid, nullSound);
 
-                Messages.Message("A leader has started a lesson on the teaching spot.", TargetInfo.Invalid,
+                Messages.Message("LeaderHasStartedLesson".Translate(), TargetInfo.Invalid,
                     MessageTypeDefOf.RejectInput);
 
                 return;
@@ -252,7 +252,7 @@ public class Building_TeachingSpot : Building
 
         if (Destroyed || !Spawned)
         {
-            TeachingUtility.AbortLesson(null, "The spot is unavailable.");
+            TeachingUtility.AbortLesson(null, "SpotIsUnavailable".Translate());
             return;
         }
 
