@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Leader Aura - Botanist -->
+  <leaderAura1.label>Leader Aura - Botanist</leaderAura1.label>
+  <!-- EN: Botanist Aura -->
+  <leaderAura1.description>Botanist Aura</leaderAura1.description>
+  <!-- EN: Level 1 -->
+  <leaderAura1.stages.Level_1.label>Level 1</leaderAura1.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leaderAura1.stages.Level_2.label>Level 2</leaderAura1.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leaderAura1.stages.Level_3.label>Level 3</leaderAura1.stages.Level_3.label>
+  <!-- EN: Leader Aura - Warrior -->
+  <leaderAura2.label>Leader Aura - Warrior</leaderAura2.label>
+  <!-- EN: Warrior Aura -->
+  <leaderAura2.description>Warrior Aura</leaderAura2.description>
+  <!-- EN: Level 1 -->
+  <leaderAura2.stages.Level_1.label>Level 1</leaderAura2.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leaderAura2.stages.Level_2.label>Level 2</leaderAura2.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leaderAura2.stages.Level_3.label>Level 3</leaderAura2.stages.Level_3.label>
+  <!-- EN: Leader Aura - Carpenter -->
+  <leaderAura3.label>Leader Aura - Carpenter</leaderAura3.label>
+  <!-- EN: Carpenter Aura -->
+  <leaderAura3.description>Carpenter Aura</leaderAura3.description>
+  <!-- EN: Level 1 -->
+  <leaderAura3.stages.Level_1.label>Level 1</leaderAura3.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leaderAura3.stages.Level_2.label>Level 2</leaderAura3.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leaderAura3.stages.Level_3.label>Level 3</leaderAura3.stages.Level_3.label>
+  <!-- EN: Leader Aura - Scientist -->
+  <leaderAura4.label>Leader Aura - Scientist</leaderAura4.label>
+  <!-- EN: Scientist Aura -->
+  <leaderAura4.description>Scientist Aura</leaderAura4.description>
+  <!-- EN: Level 1 -->
+  <leaderAura4.stages.Level_1.label>Level 1</leaderAura4.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leaderAura4.stages.Level_2.label>Level 2</leaderAura4.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leaderAura4.stages.Level_3.label>Level 3</leaderAura4.stages.Level_3.label>
+</LanguageData>

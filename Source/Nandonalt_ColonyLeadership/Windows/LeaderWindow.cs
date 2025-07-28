@@ -28,7 +28,7 @@ public class LeaderWindow : MainTabWindow
     public static List<Pawn> getAllColonists()
     {
         var pawns = new List<Pawn>();
-        pawns.AddRange(PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists);
+        pawns.AddRange(PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists);
         return pawns;
     }
 

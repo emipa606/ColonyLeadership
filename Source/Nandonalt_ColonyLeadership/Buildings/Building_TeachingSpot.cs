@@ -9,15 +9,15 @@ namespace Nandonalt_ColonyLeadership;
 
 public class Building_TeachingSpot : Building
 {
-    private readonly MessageTypeDef nullSound = new MessageTypeDef();
+    private readonly MessageTypeDef nullSound = new();
     public bool destroyedFlag;
     public List<Pawn> ignored = [];
     public int lastLessonTick = -999999;
     public int lastTryTick = -999999;
     public int lessonHour = 15;
-    public List<int> seasonSchedule = [..new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }];
+    public List<int> seasonSchedule = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     public Pawn teacher;
-    public List<Pawn> teachers = [..new Pawn[] { null, null }];
+    public List<Pawn> teachers = [null, null];
     public Pawn tempTeacher;
 
     public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -97,7 +97,7 @@ public class Building_TeachingSpot : Building
     }
 
 
-    public override void Tick()
+    protected override void Tick()
     {
         if (destroyedFlag) // Do nothing further, when destroyed (just a safety)
         {

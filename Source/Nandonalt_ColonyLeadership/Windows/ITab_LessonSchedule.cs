@@ -9,9 +9,9 @@ namespace Nandonalt_ColonyLeadership;
 
 public class ITab_LessonSchedule : ITab
 {
-    private static readonly MessageTypeDef nullSound = new MessageTypeDef();
+    private static readonly MessageTypeDef nullSound = new();
 
-    public static Vector2 CardSize = new Vector2(350f, 350f);
+    public static Vector2 CardSize = new(350f, 350f);
     private static float hourWidth;
 
     public ITab_LessonSchedule()

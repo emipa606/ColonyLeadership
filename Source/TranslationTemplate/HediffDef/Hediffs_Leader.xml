@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Leader - Botanist -->
+  <leader1.label>Leader - Botanist</leader1.label>
+  <!-- EN: Botanist -->
+  <leader1.description>Botanist</leader1.description>
+  <!-- EN: Level 1 -->
+  <leader1.stages.Level_1.label>Level 1</leader1.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leader1.stages.Level_2.label>Level 2</leader1.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leader1.stages.Level_3.label>Level 3</leader1.stages.Level_3.label>
+  <!-- EN: Leader - Warrior -->
+  <leader2.label>Leader - Warrior</leader2.label>
+  <!-- EN: Warrior -->
+  <leader2.description>Warrior</leader2.description>
+  <!-- EN: Level 1 -->
+  <leader2.stages.Level_1.label>Level 1</leader2.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leader2.stages.Level_2.label>Level 2</leader2.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leader2.stages.Level_3.label>Level 3</leader2.stages.Level_3.label>
+  <!-- EN: Leader - Carpenter -->
+  <leader3.label>Leader - Carpenter</leader3.label>
+  <!-- EN: Carpenter -->
+  <leader3.description>Carpenter</leader3.description>
+  <!-- EN: Level 1 -->
+  <leader3.stages.Level_1.label>Level 1</leader3.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leader3.stages.Level_2.label>Level 2</leader3.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leader3.stages.Level_3.label>Level 3</leader3.stages.Level_3.label>
+  <!-- EN: Leader - Scientist -->
+  <leader4.label>Leader - Scientist</leader4.label>
+  <!-- EN: Scientist -->
+  <leader4.description>Scientist</leader4.description>
+  <!-- EN: Level 1 -->
+  <leader4.stages.Level_1.label>Level 1</leader4.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leader4.stages.Level_2.label>Level 2</leader4.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leader4.stages.Level_3.label>Level 3</leader4.stages.Level_3.label>
+  <!-- EN: Leader - Scientist -->
+  <leader5.label>Leader - Scientist</leader5.label>
+  <!-- EN: Scientist -->
+  <leader5.description>Scientist</leader5.description>
+  <!-- EN: Level 1 -->
+  <leader5.stages.Level_1.label>Level 1</leader5.stages.Level_1.label>
+  <!-- EN: Level 2 -->
+  <leader5.stages.Level_2.label>Level 2</leader5.stages.Level_2.label>
+  <!-- EN: Level 3 -->
+  <leader5.stages.Level_3.label>Level 3</leader5.stages.Level_3.label>
+  <!-- EN: Ex-Leader -->
+  <leaderExpired.label>Ex-Leader</leaderExpired.label>
+  <!-- EN: Expired Leader -->
+  <leaderExpired.description>Expired Leader</leaderExpired.description>
+</LanguageData>

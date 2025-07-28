@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Leadership -->
+  <LeaderLevel.label>Leadership</LeaderLevel.label>
+  <!-- EN: The level of a leader is defined by what others think about the leader and his skillset. -->
+  <LeaderLevel.description>The level of a leader is defined by what others think about the leader and his skillset.</LeaderLevel.description>
+</LanguageData>

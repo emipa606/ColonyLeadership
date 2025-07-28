@@ -26,7 +26,7 @@ public class Dialog_ChooseLeader : Window
     }
 
 
-    public override Vector2 InitialSize => new Vector2(280f, 170f);
+    public override Vector2 InitialSize => new(280f, 170f);
 
     public override void DoWindowContents(Rect inRect)
     {

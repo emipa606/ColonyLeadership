@@ -63,7 +63,7 @@ internal class Dialog_ChooseIgnoredGroup : Window
                 var p = piData.reference;
                 if (spot.ignored.Contains(p))
                 {
-                    if (piData.value == false)
+                    if (!piData.value)
                     {
                         spot.ignored.Remove(p);
                     }

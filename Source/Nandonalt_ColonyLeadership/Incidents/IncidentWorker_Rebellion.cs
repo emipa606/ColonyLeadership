@@ -70,7 +70,7 @@ public class IncidentWorker_Rebellion : IncidentWorker
             return false;
         }
 
-        if (pawn.CurJob != null && pawn.jobs.curDriver.asleep != true)
+        if (pawn.CurJob != null && !pawn.jobs.curDriver.asleep)
         {
             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
         }

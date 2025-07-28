@@ -11,7 +11,7 @@ namespace Nandonalt_ColonyLeadership;
 
 public class IncidentWorker_SetLeadership : IncidentWorker
 {
-    private readonly Random r = new Random();
+    private readonly Random r = new();
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
@@ -72,7 +72,7 @@ public class IncidentWorker_SetLeadership : IncidentWorker
     public static List<Pawn> getAllColonists()
     {
         var pawns = new List<Pawn>();
-        pawns.AddRange(PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists);
+        pawns.AddRange(PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists);
         return pawns;
     }
 

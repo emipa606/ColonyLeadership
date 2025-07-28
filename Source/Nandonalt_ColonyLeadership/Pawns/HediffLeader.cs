@@ -62,8 +62,8 @@ public class HediffLeader : HediffWithComps
                 return null;
             }
 
-            return (Need_LeaderLevel)pawn.needs.AllNeeds.Find(
-                x => x.def == DefDatabase<NeedDef>.GetNamed("LeaderLevel"));
+            return (Need_LeaderLevel)
+                pawn.needs.AllNeeds.Find(x => x.def == DefDatabase<NeedDef>.GetNamed("LeaderLevel"));
         }
     }
 

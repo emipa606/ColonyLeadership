@@ -158,9 +158,9 @@ internal class Job_Learn : JobDriver
             defaultCompleteMode = ToilCompleteMode.Delay,
             defaultDuration = 9999
         };
-        spotToil.AddPreTickAction(() =>
+        spotToil.AddPreTickIntervalAction(delta =>
         {
-            pawn.GainComfortFromCellIfPossible();
+            pawn.GainComfortFromCellIfPossible(delta);
             ticksLeftThisToil = 9999;
 
             //LEARN

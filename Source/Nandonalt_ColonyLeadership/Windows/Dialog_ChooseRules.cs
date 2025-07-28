@@ -7,7 +7,7 @@ namespace Nandonalt_ColonyLeadership;
 
 public class Dialog_ChooseRules : Window
 {
-    public readonly List<string> electFrequencyOptions = [..new[] { "3", "2", "1" }];
+    public readonly List<string> electFrequencyOptions = ["3", "2", "1"];
     public GovType chosenLeadership;
     public string electionFrequency;
 
@@ -23,7 +23,7 @@ public class Dialog_ChooseRules : Window
         electionFrequency = "3";
     }
 
-    public override Vector2 InitialSize => new Vector2(360f, 360f);
+    public override Vector2 InitialSize => new(360f, 360f);
 
 
     public override void DoWindowContents(Rect inRect)
@@ -91,13 +91,13 @@ public class Dialog_ChooseRules : Window
         {
             var sensitivityOptions = new List<FloatMenuOption>
             {
-                new FloatMenuOption("ON".Translate(), delegate
+                new("ON".Translate(), delegate
                     {
                         ConfigManager.setPsychicSensitivityForScientist(true);
                         LeaderWindow.changeLeaderType(noSensitivitySciLeader, classicSciLeader);
                     }, MenuOptionPriority.Default,
                     delegate { TooltipHandler.TipRegion(inRect, "BuffSettingText".Translate()); }),
-                new FloatMenuOption("OFF".Translate(), delegate
+                new("OFF".Translate(), delegate
                     {
                         ConfigManager.setPsychicSensitivityForScientist(false);
                         LeaderWindow.changeLeaderType(classicSciLeader, noSensitivitySciLeader);

@@ -77,11 +77,13 @@ public class Need_LeaderLevel : Need
             score = IncidentWorker_SetLeadership.getCarpenterScore(current);
         }
 
-        if (h4 != null)
+        if (h4 == null)
         {
-            h1 = h4;
-            score = IncidentWorker_SetLeadership.getScientistScore(current);
+            return (score / 20f * 0.3f) + 1f;
         }
+
+        h1 = h4;
+        score = IncidentWorker_SetLeadership.getScientistScore(current);
 
         return (score / 20f * 0.3f) + 1f;
     }

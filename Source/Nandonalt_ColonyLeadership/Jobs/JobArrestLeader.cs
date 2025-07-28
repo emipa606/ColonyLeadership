@@ -136,10 +136,7 @@ public class JobArrestLeader : JobDriver
                     Takee.guest.SetGuestStatus(Faction.OfPlayer);
                 }
 
-                if (Takee.playerSettings == null)
-                {
-                    Takee.playerSettings = new Pawn_PlayerSettings(Takee);
-                }
+                Takee.playerSettings ??= new Pawn_PlayerSettings(Takee);
             }
         };
         yield return Toils_Reserve.Release(TargetIndex.B);

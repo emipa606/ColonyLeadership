@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Rebelling -->
+  <Rebelling.label>Rebelling</Rebelling.label>
+  <!-- EN: Rebelling against leader. -->
+  <Rebelling.baseInspectLine>Rebelling against leader.</Rebelling.baseInspectLine>
+  <!-- EN: {0} is no longer rebelling. -->
+  <Rebelling.recoveryMessage>{0} is no longer rebelling.</Rebelling.recoveryMessage>
+</LanguageData>

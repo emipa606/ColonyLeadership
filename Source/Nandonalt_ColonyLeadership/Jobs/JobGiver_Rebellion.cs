@@ -8,7 +8,7 @@ namespace Nandonalt_ColonyLeadership;
 
 internal class JobGiver_Rebellion : ThinkNode_JobGiver
 {
-    private IntRange waitTicks = new IntRange(80, 140);
+    private IntRange waitTicks = new(80, 140);
 
     public override ThinkNode DeepCopy(bool resolve = true)
     {

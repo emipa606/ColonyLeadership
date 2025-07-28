@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Ballot Box -->
+  <BallotBox.label>Ballot Box</BallotBox.label>
+  <!-- EN: Elections will take place around this box. Build it on a safe, preferably indoor spot. -->
+  <BallotBox.description>Elections will take place around this box. Build it on a safe, preferably indoor spot.</BallotBox.description>
+  <!-- EN: Chalkboard -->
+  <ChalkboardCL.label>Chalkboard</ChalkboardCL.label>
+  <!-- EN: Putting this chalkboard on a classroom will improve the effectiveness of teaching. -->
+  <ChalkboardCL.description>Putting this chalkboard on a classroom will improve the effectiveness of teaching.</ChalkboardCL.description>
+  <!-- EN: RimWorld Globe -->
+  <GlobeCL.label>RimWorld Globe</GlobeCL.label>
+  <!-- EN: Putting this globe on a classroom will improve the effectiveness of teaching. -->
+  <GlobeCL.description>Putting this globe on a classroom will improve the effectiveness of teaching.</GlobeCL.description>
+  <!-- EN: Teacher Table -->
+  <TeachingSpot.label>Teacher Table</TeachingSpot.label>
+  <!-- EN: Designates a spot where lessons will be held. -->
+  <TeachingSpot.description>Designates a spot where lessons will be held.</TeachingSpot.description>
+</LanguageData>

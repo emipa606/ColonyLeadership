@@ -2,6 +2,14 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5",
-  "SocialImageSet": true
+  "PreviewVersion": "1.6",
+  "SocialImageSet": true,
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 171281,
+  "LinesOfXML": 42088,
+  "CodeBaseSize": 84,
+  "LastXmlCleaning": "2025-07-28T20:41:53.3745081+02:00",
+  "SearchTags": " specialization"
 }

@@ -171,11 +171,11 @@ internal class Job_Teach : JobDriver
                 MoteMaker.MakeInteractionBubble(pawn, null, ThingDefOf.Mote_Speech, iconList(pawn).RandomElement());
             };
 
-            teachingTime.tickAction = delegate
+            teachingTime.tickIntervalAction = delegate(int delta)
             {
                 var actor = pawn;
-                actor.skills.Learn(SkillDefOf.Social, 0.25f);
-                actor.GainComfortFromCellIfPossible();
+                actor.skills.Learn(SkillDefOf.Social, 0.25f * delta);
+                actor.GainComfortFromCellIfPossible(delta);
             };
 
             yield return teachingTime;
@@ -195,7 +195,7 @@ internal class Job_Teach : JobDriver
             MoteMaker.MakeInteractionBubble(pawn, null, ThingDefOf.Mote_Speech, iconList(pawn).RandomElement());
         };
 
-        finishingTime.tickAction = delegate
+        finishingTime.tickIntervalAction = delegate(int delta)
         {
             if (tickC is 120 or 240 or 360)
             {
@@ -216,8 +216,8 @@ internal class Job_Teach : JobDriver
             }
 
             var actor = pawn;
-            actor.skills.Learn(SkillDefOf.Social, 0.25f);
-            actor.GainComfortFromCellIfPossible();
+            actor.skills.Learn(SkillDefOf.Social, 0.25f * delta);
+            actor.GainComfortFromCellIfPossible(delta);
             tickC++;
         };
 

@@ -42,7 +42,7 @@ public class Dialog_ChooseIgnored : Window
 
     public override Vector2 InitialSize =>
         // return new Vector2(280, 130 + (tempPawnList.Count * 25)); //Old setting before the switch to a scroll view.
-        new Vector2(280, 260);
+        new(280, 260);
 
     public override void DoWindowContents(Rect inRect)
     {
@@ -151,7 +151,7 @@ public class Dialog_ChooseIgnored : Window
         Text.Font = GameFont.Medium;
 
         Text.Anchor = TextAnchor.UpperLeft;
-        var label = string.Concat([]);
+        var label = string.Concat();
 
         Widgets.Label(rect, label);
         GUI.color = Color.white;

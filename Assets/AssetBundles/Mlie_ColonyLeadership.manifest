@@ -1,0 +1,70 @@
+ManifestFileVersion: 0
+CRC: 1856013166
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d00193591f1bb7ab7ebe3cb22ae34e21
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d00193591f1bb7ab7ebe3cb22ae34e21
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_east.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/waiting.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_warrior.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/globe.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_scientist2_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_botanist2_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_carpenter1_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_empty.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_warrior2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/carpenter3.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/star.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_botanist_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_scientist1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/warrior2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/botanist3.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_northm.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_botanist1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_warrior_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/botanist2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_botanist2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/carpenter1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_carpenter_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/botanist1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_south.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_carpenter.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_empty_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_botanist.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/globe_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_north.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/scientist1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_scientist_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_scientist2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_warrior1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_carpenter2_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_scientist.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_scientist1_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/carpenter2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_west.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/ballot_box.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_eastm.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_warrior2_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/scientist2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/scientist3.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_warrior1_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_carpenter2.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_westm.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/teaching_table_southm.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_carpenter1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/Chalkboard/ch_botanist1_m.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/warrior1.png
+- Assets/Data/Mlie.ColonyLeadership/Textures/ColonyLeadership/TeachingBubbles/warrior3.png
+Dependencies: []
