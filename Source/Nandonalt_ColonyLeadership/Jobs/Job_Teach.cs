@@ -13,13 +13,14 @@ internal class Job_Teach : JobDriver
     private const TargetIndex SpotIndex = TargetIndex.A;
 
 
-    public List<Building_Chalkboard> chalkboards = [];
+    private List<Building_Chalkboard> chalkboards = [];
 
 
     private string report = "";
-    public int tickC;
+    private int tickC;
+    public int tickCi;
 
-    protected Building_TeachingSpot Spot => (Building_TeachingSpot)job.GetTarget(TargetIndex.A).Thing;
+    private Building_TeachingSpot Spot => (Building_TeachingSpot)job.GetTarget(TargetIndex.A).Thing;
 
     public override void ExposeData()
     {
@@ -29,7 +30,7 @@ internal class Job_Teach : JobDriver
     }
 
 
-    public static List<Texture2D> iconList(Pawn current)
+    private static List<Texture2D> iconList(Pawn current)
     {
         var sciLeaderDeffName = ConfigManager.getScientistLeaderDeffName();
         var h1 = (HediffLeader)current.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("leader1"));
@@ -197,7 +198,8 @@ internal class Job_Teach : JobDriver
 
         finishingTime.tickIntervalAction = delegate(int delta)
         {
-            if (tickC is 120 or 240 or 360)
+            tickCi += delta;
+            if (tickCi > 120)
             {
                 foreach (var chalk in chalkboards)
                 {
@@ -213,12 +215,14 @@ internal class Job_Teach : JobDriver
 
                     Map.mapDrawer.MapMeshDirty(chalk.Position, MapMeshFlagDefOf.Things, true, false);
                 }
+
+                tickCi = 0;
             }
 
             var actor = pawn;
             actor.skills.Learn(SkillDefOf.Social, 0.25f * delta);
             actor.GainComfortFromCellIfPossible(delta);
-            tickC++;
+            tickC += delta;
         };
 
         yield return finishingTime;
@@ -246,7 +250,6 @@ internal class Job_Teach : JobDriver
                 {
                     Spot.ChangeState(Building_TeachingSpot.State.lesson,
                         Building_TeachingSpot.LessonState.finished);
-                    //Map.GetComponent<MapComponent_SacrificeTracker>().ClearVariables();
                 }
             },
             defaultCompleteMode = ToilCompleteMode.Instant

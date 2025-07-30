@@ -7,9 +7,9 @@
   "Patches": false,
   "Defs": true,
   "Assemblies": true,
-  "LinesOfCode": 171281,
+  "LinesOfCode": 171269,
   "LinesOfXML": 42088,
   "CodeBaseSize": 84,
-  "LastXmlCleaning": "2025-07-28T20:41:53.3745081+02:00",
+  "LastXmlCleaning": "2025-07-30T20:29:39.5947397+02:00",
   "SearchTags": " specialization"
 }
